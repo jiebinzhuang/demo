@@ -1,0 +1,4 @@
+getTempTokenRequest:8070/omp/3.0/esb-aus/gettemptokenrequest
+webAppSubscriptionRequest:8070/omp/3.0/esb-aus/webappsubscriptionrequest
+webappOrderInfoSync:8070/omp/3.0/esb-aus/WebappOrderInfoSync
+getAppInstanceidRequest:8075/omp/3.0/esb-aus/getappinstanceidrequest
