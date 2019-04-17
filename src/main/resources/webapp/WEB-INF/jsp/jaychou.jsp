@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <%@include file="_header.jsp"%>
 <main role="main">
 
@@ -17,39 +17,39 @@
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="card">
-					<a href="https://scontent-iad3-1.cdninstagram.com/vp/54a0b67f04a76fff3f3ca69a80b16c42/5D41FFEA/t51.2885-15/e35/53934244_315290029183397_7713074745145989178_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" class="photo_wrapper">
-						<img class="card-img-top img-fluid lazy" src="https://scontent-iad3-1.cdninstagram.com/vp/bfd0cbf12eb640ad200dc074d9bd95e9/5D3016A9/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/53934244_315290029183397_7713074745145989178_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" style="">
+					<a href="https://scontent-iad3-1.cdninstagram.com/vp/a9c05210fcb26e509ec64a49c52f2756/5D363A5F/t51.2885-15/e35/54513054_126556991821783_4446665149373209052_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" class="photo_wrapper">
+						<img class="card-img-top img-fluid lazy" src="https://scontent-iad3-1.cdninstagram.com/vp/76b4f5717eee6baf297d57b370b6d5db/5D39A832/t51.2885-15/e35/c160.0.639.639/54513054_126556991821783_4446665149373209052_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" style="">
 					</a>
 					<div class="card-footer">
-						<i class="fa fa-heart" aria-hidden="true"></i> 5077 &nbsp;
-						<i class="fa fa-comment" aria-hidden="true"></i> 139 &nbsp;
-						<a href="https://scontent-iad3-1.cdninstagram.com/vp/54a0b67f04a76fff3f3ca69a80b16c42/5D41FFEA/t51.2885-15/e35/53934244_315290029183397_7713074745145989178_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
+						<i class="fa fa-heart" aria-hidden="true"></i> 181,258 &nbsp;
+						<i class="fa fa-comment" aria-hidden="true"></i> 6,950 &nbsp;
+						<a href="https://scontent-iad3-1.cdninstagram.com/vp/a9c05210fcb26e509ec64a49c52f2756/5D363A5F/t51.2885-15/e35/54513054_126556991821783_4446665149373209052_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4">
 				<div class="card">
-					<a href="https://scontent.cdninstagram.com/vp/17f5fd0c7a13b58a6af805eb76ca38a0/5CAC312C/t50.2886-16/55751790_2041748776125201_7819546698958503936_n.mp4?_nc_ht=scontent.cdninstagram.com" class="photo_wrapper">
-						<img class="card-img-top img-fluid" src="https://scontent-iad3-1.cdninstagram.com/vp/d5aa84b54be5ad612b76b472e0367bcc/5CAC6B60/t51.2885-15/sh0.08/e35/s640x640/53022151_1187376404754985_8173492232608577845_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com">
-						<i class="fa fa-video-camera fa-3x fa-inverse" aria-hidden="true"></i>
+					<a href="https://scontent-iad3-1.cdninstagram.com/vp/a08392a2a87dc2a1c15b817b5c7ae45b/5D371CC9/t51.2885-15/e35/p1080x1080/54511162_796871214015569_3625831727148052863_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" class="photo_wrapper">
+						<img class="card-img-top img-fluid" src="https://scontent-iad3-1.cdninstagram.com/vp/60610b3a76c5d41e5f28be9d372787d6/5D380290/t51.2885-15/sh0.08/e35/c0.180.1440.1440/s640x640/54511162_796871214015569_3625831727148052863_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com">
 					</a>
 					<div class="card-footer">
 						<i class="fa fa-heart" aria-hidden="true"></i> 6431 &nbsp;
 						<i class="fa fa-comment" aria-hidden="true"></i> 89 &nbsp;
 						<span class="post_date">2w ago</span>&nbsp;
-						<a href="https://scontent.cdninstagram.com/vp/17f5fd0c7a13b58a6af805eb76ca38a0/5CAC312C/t50.2886-16/55751790_2041748776125201_7819546698958503936_n.mp4?_nc_ht=scontent.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
+						<a href="https://scontent-iad3-1.cdninstagram.com/vp/a08392a2a87dc2a1c15b817b5c7ae45b/5D371CC9/t51.2885-15/e35/p1080x1080/54511162_796871214015569_3625831727148052863_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4">
 				<div class="card">
-					<a href="https://scontent-iad3-1.cdninstagram.com/vp/187a4c1d92011dd6a95ae5263d13318c/5D490219/t51.2885-15/e35/52893375_330852720875398_2507995091930449443_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" class="photo_wrapper">
-						<img class="card-img-top img-fluid lazy" src="https://scontent-iad3-1.cdninstagram.com/vp/854445c4b0536354a72feae894eac821/5D34D07A/t51.2885-15/sh0.08/e35/c0.89.959.959/s640x640/52893375_330852720875398_2507995091930449443_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" style="">
+					<a href="https://scontent.cdninstagram.com/vp/0a2105df5a484f3d56dcfe5412758477/5CADF097/t50.2886-16/56060937_856014031404503_4884520190953390080_n.mp4?_nc_ht=scontent.cdninstagram.com" class="photo_wrapper">
+						<img class="card-img-top img-fluid lazy" src="https://scontent-iad3-1.cdninstagram.com/vp/0c843aee007071cfa056112c2d2daca8/5CAE5462/t51.2885-15/e35/c157.0.405.405/54247679_399593704203065_3926125561294365962_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" style="">
+						<i class="fa fa-video-camera fa-3x fa-inverse" aria-hidden="true"></i>
 					</a>
 					<div class="card-footer">
 						<i class="fa fa-heart" aria-hidden="true"></i> 2017 &nbsp;
 						<i class="fa fa-comment" aria-hidden="true"></i>429 &nbsp;
-						<a href="https://scontent-iad3-1.cdninstagram.com/vp/187a4c1d92011dd6a95ae5263d13318c/5D490219/t51.2885-15/e35/52893375_330852720875398_2507995091930449443_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
+						<a href="https://scontent.cdninstagram.com/vp/0a2105df5a484f3d56dcfe5412758477/5CADF097/t50.2886-16/56060937_856014031404503_4884520190953390080_n.mp4?_nc_ht=scontent.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
 					</div>
 				</div>
 			</div>

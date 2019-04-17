@@ -29,15 +29,15 @@
 			</div>
 			<div class="col-lg-4">
 				<div class="card">
-					<a href="https://scontent.cdninstagram.com/vp/17f5fd0c7a13b58a6af805eb76ca38a0/5CAC312C/t50.2886-16/55751790_2041748776125201_7819546698958503936_n.mp4?_nc_ht=scontent.cdninstagram.com" class="photo_wrapper">
-						<img class="card-img-top img-fluid" src="https://scontent-iad3-1.cdninstagram.com/vp/d5aa84b54be5ad612b76b472e0367bcc/5CAC6B60/t51.2885-15/sh0.08/e35/s640x640/53022151_1187376404754985_8173492232608577845_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com">
+					<a href="https://scontent.cdninstagram.com/vp/bc584c4586a844d179d5e3f2ef488643/5CAF7CEC/t50.2886-16/55751790_2041748776125201_7819546698958503936_n.mp4?_nc_ht=scontent.cdninstagram.com" class="photo_wrapper">
+						<img class="card-img-top img-fluid" src="https://scontent-iad3-1.cdninstagram.com/vp/85dfc2f3ed54c2d20aa41cc3022df1d8/5CAFB720/t51.2885-15/sh0.08/e35/s640x640/53022151_1187376404754985_8173492232608577845_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com">
 						<i class="fa fa-video-camera fa-3x fa-inverse" aria-hidden="true"></i>
 					</a>
 					<div class="card-footer">
 						<i class="fa fa-heart" aria-hidden="true"></i> 6431 &nbsp;
 						<i class="fa fa-comment" aria-hidden="true"></i> 89 &nbsp;
 						<span class="post_date">2w ago</span>&nbsp;
-						<a href="https://scontent.cdninstagram.com/vp/17f5fd0c7a13b58a6af805eb76ca38a0/5CAC312C/t50.2886-16/55751790_2041748776125201_7819546698958503936_n.mp4?_nc_ht=scontent.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
+						<a href="https://scontent.cdninstagram.com/vp/bc584c4586a844d179d5e3f2ef488643/5CAF7CEC/t50.2886-16/55751790_2041748776125201_7819546698958503936_n.mp4?_nc_ht=scontent.cdninstagram.com"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
 					</div>
 				</div>
 			</div>
