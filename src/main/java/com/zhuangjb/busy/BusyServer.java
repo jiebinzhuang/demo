@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.zhuangjb.biz.task.ComputResultTask;
+import com.zhuangjb.biz.task.GetPopularUserTask;
 import com.zhuangjb.util.SystemUtils;
 
 /**
@@ -69,9 +69,9 @@ public class BusyServer {
 //			}
 //
 //			// 订单接口处理线程
-			ComputResultTask getdatatask = new ComputResultTask();
+			GetPopularUserTask getdatatask = new GetPopularUserTask();
 			Thread getdatathread = new Thread(getdatatask);
-			getdatathread.setName("ComputResultTask");
+			getdatathread.setName("GetPopularUserTask");
 			threadPool.add(getdatathread);
 
 

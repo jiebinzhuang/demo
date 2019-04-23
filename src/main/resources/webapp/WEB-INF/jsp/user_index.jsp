@@ -1,188 +1,117 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-
-<%
-	String username = (String) request.getSession().getAttribute(
-			Constants.USERNAME);
-    String modulename = (String) request.getParameter("modulename");
-%>
-<!DOCTYPE HTML>
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
 <%@include file="_header.jsp"%>
-<link href="<%=ctxPath%>/css/H-ui.login.css" rel="stylesheet" type="text/css" />
-<title><%=system_name %></title>
-</head>
-<body>
-<header class="Hui-header cl"> <a class="Hui-logo l" title="H-ui.admin v2.3" href="/"><%=system_name %></a> <a class="Hui-logo-m l" href="/" title="H-ui.admin">H-ui</a> <span class="Hui-subtitle l">V1.0</span>
-	<nav class="mainnav cl" id="Hui-nav">
-		<ul>	   
-			<li><a href="<%=ctxPath %>/index.action">首页</a></li>
-		</ul>
-	</nav>
-	<ul class="Hui-userbar">
-		<li>欢迎您，用户</li>
-		<li class="dropDown dropDown_hover"><a href="#" class="dropDown_A">${USERNAME}<i class="Hui-iconfont">&#xe6d5;</i></a>
-			<ul class="dropDown-menu radius box-shadow">
-				<li><a href="javascript:void(0)" onclick="user/customerCard.action">个人信息</a></li>
-<!-- 				<li><a href="#">切换账户</a></li> -->
-				<li><a href="logout">退出</a></li>
-			</ul>
-		</li>
-<!-- 		<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li> -->
-		<li id="Hui-skin" class="dropDown right dropDown_hover"><a href="javascript:;" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
-			<ul class="dropDown-menu radius box-shadow">
-				<li><a href="javascript:;" data-val="default" title="黑色">黑色</a></li>
-				<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
-				<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
-				<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
-				<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
-				<li><a href="javascript:;" data-val="orange" title="绿色">橙色</a></li>
-			</ul>
-		</li>
-	</ul>
-	<a href="javascript:;" class="Hui-nav-toggle Hui-iconfont" aria-hidden="false">&#xe667;</a> 
-	</header>
-	
- <aside class="Hui-aside">
-	<input runat="server" id="divScrollValue" type="hidden" value="" />
-		<div class="menu_dropdown bk_2">
-			<dl id="menu-liuliang">
-				<dt>
-					<i class="Hui-iconfont">&#xe616;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
-					
-				</dt>
-				<dd>
-					<ul>
-						<li><a _href="<%=ctxPath%>/admin/device/list.action" data-title="设备管理" href="javascript:void(0)">设备管理</a></li>
-							<li><a _href="<%=ctxPath%>/user/showmsg/show.action" data-title="显示消息" href="javascript:void(0)">显示消息</a></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="menu-xiazhu">
-				<dt>
-					<i class="Hui-iconfont">&#xe616;</i> 预测管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
-				</dt>
-				<dd>
-					<ul>
-						<li><a _href="<%=ctxPath%>/user/xiazhu/xiazhu.action" data-title="自动预测" href="javascript:void(0)">自动预测</a></li>
-						<li><a _href="<%=ctxPath%>/user/xiazhu/list.action" data-title="我的预测情况" href="javascript:void(0)">我的预测情况</a></li>
-						<li><a _href="<%=ctxPath%>/admin/xiazhurequest/list.action" data-title="预测记录" href="javascript:void(0)">预测记录</a></li>
-						<li><a _href="<%=ctxPath%>/user/xiazhuresult/openresult.action" data-title="开奖结果" href="javascript:void(0)">开奖结果</a></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="menu-pk10">
-				<dt>
-					<i class="Hui-iconfont">&#xe616;</i>北京赛车<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
-				</dt>
-				<dd>
-					<ul>
-						<li><a _href="<%=ctxPath%>/pk10/scheme1/list.action" data-title="方案1" href="javascript:void(0)">方案1</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme2/list.action" data-title="方案2" href="javascript:void(0)">方案2</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme3/list.action" data-title="方案3" href="javascript:void(0)">方案3</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme4/list.action" data-title="方案4" href="javascript:void(0)">方案4</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme5/list.action" data-title="方案5" href="javascript:void(0)">方案5</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme6/list.action" data-title="方案6" href="javascript:void(0)">方案6</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme7/list.action" data-title="方案7" href="javascript:void(0)">方案7</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme8/list.action" data-title="方案8" href="javascript:void(0)">方案8</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme9/list.action" data-title="方案9(漂移)" href="javascript:void(0)">方案9(漂移)</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme10/list.action" data-title="方案10(漂移)" href="javascript:void(0)">方案10(漂移)</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme11/list.action" data-title="方案11(漂移)" href="javascript:void(0)">方案11(漂移)</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme12/list.action" data-title="方案12" href="javascript:void(0)">方案12</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme13/list.action" data-title="方案13" href="javascript:void(0)">方案13</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme14/list.action" data-title="方案14" href="javascript:void(0)">方案14</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme15/list.action" data-title="方案15" href="javascript:void(0)">方案15（对子）</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme18/list.action" data-title="方案18" href="javascript:void(0)">方案18</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme19/list.action" data-title="方案19" href="javascript:void(0)">方案19</a></li>
-					    <li><a _href="<%=ctxPath%>/pk10/scheme21/list.action" data-title="方案21" href="javascript:void(0)">方案21</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme22/list.action" data-title="方案22" href="javascript:void(0)">方案22</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme23/list.action" data-title="方案23" href="javascript:void(0)">方案23</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme24/list.action" data-title="方案24" href="javascript:void(0)">方案24</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme25/list.action" data-title="方案25" href="javascript:void(0)">方案25</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme26/list.action" data-title="方案26" href="javascript:void(0)">方案26</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme27/list.action" data-title="方案27" href="javascript:void(0)">方案27</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme28/list.action" data-title="方案28" href="javascript:void(0)">方案28</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme29/list.action" data-title="方案29" href="javascript:void(0)">方案29</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme30/list.action" data-title="方案30" href="javascript:void(0)">方案30</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme31/list.action" data-title="方案31" href="javascript:void(0)">方案31</a></li>
-						<li><a _href="<%=ctxPath%>/pk10/scheme32/list.action" data-title="方案32" href="javascript:void(0)">方案32</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme33/list.action" data-title="方案33" href="javascript:void(0)">方案33</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme34/list.action" data-title="方案34" href="javascript:void(0)">方案34</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme35/list.action" data-title="方案35" href="javascript:void(0)">方案35</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme36/list.action" data-title="方案36" href="javascript:void(0)">方案36</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme37/list.action" data-title="方案37" href="javascript:void(0)">方案37</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme38/list.action" data-title="方案38" href="javascript:void(0)">方案38</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme39/list.action" data-title="方案39" href="javascript:void(0)">方案39</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme40/list.action" data-title="方案40" href="javascript:void(0)">方案40</a></li>
-                        <li><a _href="<%=ctxPath%>/pk10/scheme41/list.action" data-title="方案41" href="javascript:void(0)">方案41</a></li>
-					</ul>
-				</dd>
-			</dl>
-			
+<main role="main">
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="image/yao.jpg" style="width:80% ;height:100%; background:#777 ; color:#777" />
+				<div class="container">
+					<div class="carousel-caption text-right">
+						<h1>Yao Ming</h1>
+						<p>Yao Ming (Chinese: 姚明; born September 12, 1980) is a Chinese basketball executive and retired professional basketball player who played for the Shanghai Sharks of the Chinese Basketball Association (CBA) and the Houston Rockets of the National Basketball Association (NBA).</p>
+						<p><a class="btn btn-lg btn-primary" href="https://www.instagram.com/yao" role="button">Follow</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image/jaychou.jpg" style="width:80% ;height:100%; background:#777 ; color:#777" />
+				<div class="container">
+					<div class="carousel-caption text-left">
+						<h1>jaychou</h1>
+						<p>Jay Chou (traditional Chinese: 周杰倫; simplified Chinese: 周杰伦; pinyin: Zhōu Jiélún; Wade–Giles: Chou Chieh-lun; born 18 January 1979)[3] is a Chinese musician, singer, songwriter, record producer, film producer, actor, and director.</p>
+						<p><a class="btn btn-lg btn-primary" href="https://www.instagram.com/jaychou/" role="button">Follow</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image/chen.jpg" style="width:80% ;height:100%; background:#777 ; color:#777" />
+				<div class="container">
+					<div class="carousel-caption text-right">
+						<h1>Jackie Chan</h1>
+						<p>Datuk Chan Kong-sang SBS[1] MBE[2] PMW[3] (Chinese: 陳港生; born 7 April 1954),[4] known professionally as Jackie Chan, is a Hong Kong martial artist, actor, film director, producer, stuntman, and singer.</p>
+						<p><a class="btn btn-lg btn-primary" href="https://www.instagram.com/jackiechan.official/" role="button">Follow</a></p>
+					</div>
+				</div>
+			</div>
+
 		</div>
-</aside>
-<div class="dislpayArrow"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
-	<div class="dislpayArrow">
-		<a class="pngfix" href="javascript:void(0);"
-			onClick="displaynavbar(this)"></a>
+		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
 	</div>
-	<section class="Hui-article-box">
-		<div id="Hui-tabNav" class="Hui-tabNav">
-			<div class="Hui-tabNav-wp">
-				<ul id="min_title_list" class="acrossTab cl">
-					<li class="active"><span title="我的今日输赢情况" data-href="<%=ctxPath%>/user/xiazhuresult/mywinlose.action">我的今日输赢情况</span><em></em></li>
-				</ul>
+
+	<h2 class="text-center mt-4 mb-1 h3">Instagram Popular Chinese Users</h2>
+	<!-- Marketing messaging and featurettes
+    ================================================== -->
+	<!-- Wrap the rest of the page in another container to center all the content. -->
+	<h2 class="text-center mt-4 mb-1 h3"></h2>
+	<div class="container marketing">
+
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<div class="col-lg-3">
+				<a href="userDetail.action?username=yao" class="pt-2">
+					<img src="https://scontent-lax3-2.cdninstagram.com/vp/c06f7c2f99d71a45b5404213891b460b/5D2F88A3/t51.2885-19/s150x150/14350463_663207703854473_784235459_a.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com" style="width:140px ;height:140px; background:#777 ; color:#777" class="rounded-circle"/>
+				</a>
+				<div class="card-block text-left">
+					<h4 class="card-title text-truncate mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<a href="userDetail.action?username=yao" class="pt-2">Yao  Ming</a></h4>
+				</div>
 			</div>
-			<div class="Hui-tabNav-more btn-group">
-				<a id="js-tabNav-prev" class="btn radius btn-default size-S"
-					href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a
-					id="js-tabNav-next" class="btn radius btn-default size-S"
-					href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a>
+			<div class="col-lg-3">
+				<a href="userDetail.action?username=jaychou" class="pt-2">
+					<img src="https://scontent-lax3-2.cdninstagram.com/vp/64202f1ab5248066081ad272b6b15359/5D2ADE9F/t51.2885-19/s150x150/21147825_124638651514445_4540910313213526016_a.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com" style="width:140px ;height:140px; background:#777 ; color:#777" class="rounded-circle"/>
+				</a>
+				<div class="card-block text-left">
+					<h4 class="card-title text-truncate mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<a href="userDetail.action?username=jaychou" class="pt-2">Jay Chou</a></h4>
+				</div>
 			</div>
-		</div>
-		<div id="iframe_box" class="Hui-article">
-			<div class="show_iframe">
-				<div style="display: none" class="loading"></div>
-				<iframe scrolling="yes" frameborder="0" src="<%=ctxPath%>/user/xiazhuresult/mywinlose.action"></iframe>
+			<div class="col-lg-3">
+				<a href="userDetail.action?username=jackiechan" class="pt-2">
+					<img src="https://scontent-iad3-1.cdninstagram.com/vp/090593c9c3d32b0863112d3ea5a6f1d7/5D2C4523/t51.2885-19/s150x150/20635455_1622953957716779_3883829670394724352_a.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" style="width:140px ;height:140px; background:#777 ; color:#777" class="rounded-circle"/>
+				</a>
+				<div class="card-block text-left">
+					<h4 class="card-title text-truncate mb-0">&nbsp;&nbsp;&nbsp;<a href="userDetail.action?username=jackiechan" class="pt-2">Jackie Chan</a></h4>
+				</div>
 			</div>
-		</div>
-	</section>
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="lib/layer/2.1/layer.js"></script> 
-<script type="text/javascript" src="js/H-ui.js"></script> 
-<script type="text/javascript" src="js/H-ui.admin.js"></script> 
-<script type="text/javascript">
-/*资讯-添加*/
-function article_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*图片-添加*/
-function picture_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*产品-添加*/
-function product_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*用户-添加*/
-function member_add(title,url,w,h){
-	layer_show(title,url,w,h);
-}
-</script> 
-</body>
+			<div class="col-lg-3">
+				<a href="userDetail.action?username=kimkardashian" class="pt-2">
+					<img src="https://web.stagram.com/assets/img/icons/kimkardashian.jpg" style="width:140px ;height:140px; background:#777 ; color:#777" class="rounded-circle"/>
+					<h4>kimkardashian</h4>
+				</a>
+			</div>
+			<%--<div class="col-lg-3">--%>
+			<%--<a href="userDetail.action?username=leomessi" class="pt-2">--%>
+			<%--<img src="https://web.stagram.com/assets/img/icons/leomessi.jpg" style="width:140px ;height:140px; background:#777 ; color:#777" class="rounded-circle"/>--%>
+			<%--<h4>&nbsp;&nbsp;Leo&nbsp;Messi</h4>--%>
+			<%--</a>--%>
+			<%--</div>--%>
+
+		</div><!-- /.row -->
+
+
+
+
+		<hr class="featurette-divider">
+
+		<!-- /END THE FEATURETTES -->
+
+	</div><!-- /.container -->
+
+
+
+</main>
+<%@include file="_footer.jsp"%>
+
 </html>

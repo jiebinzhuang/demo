@@ -3,56 +3,9 @@
 <%@include file="_header.jsp"%>
 <main role="main">
 
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="image/yao.jpg" style="width:80% ;height:100%; background:#777 ; color:#777" />
-				<div class="container">
-					<div class="carousel-caption text-right">
-						<h1>Yao Ming</h1>
-						<p>Yao Ming (Chinese: 姚明; born September 12, 1980) is a Chinese basketball executive and retired professional basketball player who played for the Shanghai Sharks of the Chinese Basketball Association (CBA) and the Houston Rockets of the National Basketball Association (NBA).</p>
-						<p><a class="btn btn-lg btn-primary" href="https://www.instagram.com/yao" role="button">Follow</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="image/jaychou.jpg" style="width:80% ;height:100%; background:#777 ; color:#777" />
-				<div class="container">
-					<div class="carousel-caption text-left">
-						<h1>jaychou</h1>
-						<p>Jay Chou (traditional Chinese: 周杰倫; simplified Chinese: 周杰伦; pinyin: Zhōu Jiélún; Wade–Giles: Chou Chieh-lun; born 18 January 1979)[3] is a Chinese musician, singer, songwriter, record producer, film producer, actor, and director.</p>
-						<p><a class="btn btn-lg btn-primary" href="https://www.instagram.com/jaychou/" role="button">Follow</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="image/chen.jpg" style="width:80% ;height:100%; background:#777 ; color:#777" />
-				<div class="container">
-					<div class="carousel-caption text-right">
-						<h1>Jackie Chan</h1>
-						<p>Datuk Chan Kong-sang SBS[1] MBE[2] PMW[3] (Chinese: 陳港生; born 7 April 1954),[4] known professionally as Jackie Chan, is a Hong Kong martial artist, actor, film director, producer, stuntman, and singer.</p>
-						<p><a class="btn btn-lg btn-primary" href="https://www.instagram.com/jackiechan.official/" role="button">Follow</a></p>
-					</div>
-				</div>
-			</div>
 
-		</div>
-		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
 
-	<h2 class="text-center mt-4 mb-1 h3">Instagram Popular Chinese Users</h2>
+	<h2 class="text-center mt-4 mb-1 h3">Instagram Popular Users</h2>
 	<!-- Marketing messaging and featurettes
     ================================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->

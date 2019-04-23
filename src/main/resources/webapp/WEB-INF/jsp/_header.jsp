@@ -38,7 +38,7 @@
 					<a class="nav-link" href="http://www.insgraph.com">Insgraph<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Online Instagram Image and Video  Share in China</a>
+					<a class="nav-link disabled" href="#">Online Instagram Image and Video  Viewer and Downloader</a>
 				</li>
 			</ul>
 			<form class="form-inline mt-2 mt-md-0">
