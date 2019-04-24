@@ -4,6 +4,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<display-name>Nutz demo:: hello Mvc</display-name>
 	<filter>
+		<filter-name>ContextHolderFilter</filter-name>
+		<filter-class>com.zhuangjb.web.filter.ContextHolderFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ContextHolderFilter</filter-name>
+		<servlet-name>nutz-demo</servlet-name>
+	</filter-mapping>
+	<filter>
 		<filter-name>LoginFilter</filter-name>
 		<filter-class>com.zhuangjb.web.filter.LoginFilter</filter-class>
 	</filter>
