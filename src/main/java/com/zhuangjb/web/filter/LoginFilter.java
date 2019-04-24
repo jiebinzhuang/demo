@@ -58,7 +58,7 @@ public class LoginFilter implements Filter {
 				response.setContentType("text/html");
 				Mvcs.write(response, map, JsonFormat.full());
 			} else {
-				response.sendRedirect("/index.action");
+				response.sendRedirect("/index");
 			}
 			return;
 		} else {

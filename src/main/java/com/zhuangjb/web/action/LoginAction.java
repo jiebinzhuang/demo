@@ -37,7 +37,7 @@ public class LoginAction extends AbstractAction {
 
 		if ("POST".equalsIgnoreCase(request.getMethod()) && this.checkUser(username, password, request)) {
 			request.getSession().setAttribute(Constants.USERNAME, username);
-			return new ServerRedirectView("index.action");
+			return new ServerRedirectView("index");
 		} else {
 			request.setAttribute("msg", "用户名或密码错误!");
 			return new JspView("/WEB-INF/jsp/login.jsp");
