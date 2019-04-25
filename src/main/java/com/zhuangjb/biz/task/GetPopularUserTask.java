@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.zhuangjb.client.InstagramUtils;
 import com.zhuangjb.util.HttpUtils;
 import com.zhuangjb.util.JsonUtil;
 import org.apache.commons.logging.Log;
@@ -30,26 +31,19 @@ public class GetPopularUserTask implements Runnable {
 			log.info("processor start:" + this.getClass().toString());
 
 			BasicDBObject qryfilter2 = new BasicDBObject();
-			qryfilter2.put(DBC.dr, 0);
 
 			List<Document> userdocs = MongoDAO.getInstance().find("user_popular",
 					qryfilter2);
 			for (Document doc : userdocs) {
 				try {
-					String json= HttpUtils.httpGet("http://127.0.0.1:5000/instagram/getImageList?username="+doc.get("username"));
-					Map<String, Object> resultMap= JsonUtil.jsonToMap(json);
-					Document userdoc=new Document();
+					InstagramUtils.updateUserInfo((String)doc.get("username"));
 
-					for (Map.Entry<String, Object> entry : resultMap.entrySet()) {
-						System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
-						userdoc.put(entry.getKey(), entry.getValue());
-					}
-					MongoDAO.getInstance().insert("user_info",userdoc);
+					InstagramUtils.getUserPost((String)doc.get("username"),1);
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					log.error("update data error",e1);
 				}
 			}
-			SystemUtils.delayTimer(60000);
+			SystemUtils.delayTimer(600000);
 
 		}
 	}

@@ -82,6 +82,10 @@ public class JsonUtil {
 		return gson.fromJson(json, Map.class);
 	}
 
+	public static   List<Map> jsonArrayToMapList(String jsonStr) {
+		return jsonArrayToList(jsonStr, Map.class, null);
+	}
+
 	public static <T> List<T> jsonArrayToList(String jsonStr, Class<T> clazz, List<T> results) {
 		if (results == null) {
 			results = new ArrayList<T>();
