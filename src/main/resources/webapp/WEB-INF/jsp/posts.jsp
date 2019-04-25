@@ -1,6 +1,6 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="UTF-8">
 <%@include file="_header.jsp"%>
 <main role="main">
 

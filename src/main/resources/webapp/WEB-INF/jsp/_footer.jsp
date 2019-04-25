@@ -1,8 +1,162 @@
-<!-- FOOTER -->
-<footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017-2019 China XiaMen SmallCandy Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="bootstrap-4.3.1/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js"></script></body>
+<div class="footer">
+    <div class="footer_top">
+        <div class="footer_inner">
+            <div class="left fl">
+                <img class="footer_logo" src="../images/881ae53d-2f84-4257-86c3-10e9805ad19f.png" title="" alt="">
+                <div class="icon-btn">
+                    <a href="">
+                        <span id="wx"></span>
+                        <img id="wxe" src="../images/c6e68107-edae-41b2-85af-1644cf5988ad%20(1).jpg" alt="">
+                    </a>
+                    <a href="//weibo.com/xhsapp?refer_flag=1001030101_">
+                        <span></span>
+                    </a>
+                    <a href="https://itunes.apple.com/cn/app/%E5%B0%8F%E7%BA%A2%E4%B9%A6-%E6%A0%87%E8%AE%B0%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/id741292507?mt=8">
+                        <span></span>
+                        ios
+                    </a>
+                    <a href="https://www.wandoujia.com/apps/com.xingin.xhs">
+                        <span></span>
+                        安卓
+                    </a>
+                </div>
+            </div>
+            <div class="right fr">
+                <div class="beed fl">
+                    <span></span>
+                    <div class="tab">
+                        <span>公司相关</span>
+                        <a href="" title="小红书_加入我们">加入我们</a>
+                        <a href="招商合作.html" title="小红书_招商合作">招商合作</a>
+                        <a href="关于我们.html" title="小红书_关于我们">关于我们</a>
+                    </div>
+                </div>
+                <div class="beed fl">
+                    <span></span>
+                    <div class="tab">
+                        <span>内容相关</span>
+                        <a href="社区精选.html" title="小红书_社区精选">社区精选</a>
+                        <a href="" title="小红书_媒体报道">媒体报道</a>
+                    </div>
+                </div>
+                <div class="beed fl">
+                    <span></span>
+                    <div class="tab">
+                        <span>协议条款</span>
+                        <a href="" title="小红书_注册协议">注册协议</a>
+                        <a href="" title="小红书_隐私协议">隐私协议</a>
+                        <a href="" title="小红书_侵权投诉指引">侵权投诉指引</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom">
+        <div class="inner">
+            <div class="info">
+                <a target="_blank" href="" title="小红书_沪ICP备">沪ICP备 13030189号 Copyright © 2014-<span>2018</span>行吟信息科技（上海）有限公司</a>
+                <span>| 地址：上海市黄浦区马当路388号C座</span>
+                <span>| 电话：021-64224530</span>
+                | <a  target="_blank" href=""> 自营经营者营业执照</a>
+                <a target="_blank" href="" title="小红书_沪公网安备"><span>2018</span>  沪公网安备 31010102002533号<i class="police"></i></a>
+            </div>
+            <div class="info">
+                <span title="小红书_网文">沪网文〔2018〕4086-308号</span>
+                | <a  target="_blank" href="" title="小红书_网络文化经营许可"> 网络文化经营许可证：沪网文[2018]4086-308号</a>
+                | <a  target="_blank" href="" title="小红书_网文">增值电信业务经营许可证：沪B2-20150021</a>
+                | <a  target="_blank" href="" title="小红书_食品经营">食品经营许可证：JY13101140093802</a>
+                | <a  target="_blank" href="" title="小红书_出版物经营">出版物经营许可证：新出发沪零字第M7553号</a></div> <div data-v-3b6d624c="" class="info"><a target="_blank" href="//o3.xiaohongshu.com/d/5-xingyin-sh-yiliaoqixie.pdf" title="小红书_医疗器械经营">医疗器械经营许可证：沪嘉食药监械经营许20187006号</a>
+            | <a  target="_blank" href="" title="小红书_互联网药品信息服务">互联网药品信息服务资格证书：(沪)-经营性-2018-0011 </a>
+            | <span title="小红书_违法不良信息">违法不良信息举报电话：(027) 5931 3970</span>
+            | <span>上海市互联网举报中心</span><i class="email"></i>
+
+            <div id="fixewm"></div>
+            <div id="yc">
+                <img src="../images/936da4bf-1faa-4e6a-af2d-9b853c3e6e55.png" class="ewimg">
+                <p class="title1">扫我下载App</p>
+            </div>
+
+
+            <div class="totop" style="display: none;">
+
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!--鼠标移上显示二维码-->
+<script>
+    $(function () {
+        $wx=$("#wx");
+        $wxe=$("#wxe");
+        $wx.mouseover(function () {
+            $wxe.css("display","block");
+        }).mouseout(function () {
+            $wxe.css("display","none");
+        })
+    })
+</script>
+<script>
+    $(function () {
+        $fixewm=$("#fixewm");
+        $yc=$("#yc");
+        $fixewm.mouseover(function () {
+            $yc.css("display","block");
+        }).mouseout(function () {
+            $yc.css("display","none");
+        })
+    })
+</script>
+<!--鼠标移上切换图片-->
+<!--回到顶部-->
+<script>
+    var totop=document.querySelectorAll(".totop")[0];
+    window.onscroll=function (e) {
+        var oev=e||window.event;
+        var scrollTop=getScroll().scrollTop;
+        if(scrollTop>10){
+            totop.style.display="block";
+            totop.onmouseover=function () {
+                totop.className="totop2"
+            }
+            totop.onmouseleave=function (){
+                totop.className="totop"
+            }
+        }
+        else{
+            totop.style.display="none";
+        }
+    }
+    totop.onclick=function () {
+        //document.scrolltop
+        var timer=setInterval(function () {
+            var currentScrollTop=getScroll().scrollTop;
+            var targetScrollTop=0;
+            var step=-10;
+            if(Math.abs(currentScrollTop-targetScrollTop)<Math.abs(step)){
+                document.body.scrollTop=targetScrollTop;
+                document.documentElement.scrollTop=targetScrollTop;
+                clearInterval(timer);
+                return
+            }
+            currentScrollTop+=step;
+            document.body.scrollTop=currentScrollTop;
+            document.documentElement.scrollTop=currentScrollTop;
+
+
+        },20)
+    }
+
+</script>
+<!--手风琴-->
+<script>
+    $(function(){
+        $("ul li").mouseenter(function(event){
+            //stop()先停止之前的动画，再开始当前的动画
+            $(this).siblings().stop().animate({"width":100},150);
+            $(this).stop().animate({"width":800},150);
+        }).mouseleave(function(){
+            $(this).parent().children().stop().animate({"width":240},150)
+        })
+    })
+</script>

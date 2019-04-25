@@ -29,7 +29,7 @@ public class IndexAction extends AbstractAction {
 
 		List<Document> list= new ArrayList();
 
-		List<Document> userdocs = MongoDAO.getInstance().find("user_popular",
+		List<Document> docs = MongoDAO.getInstance().find("posts_info",
 				qryfilter2);
 //		for (Document doc : userdocs) {
 //				qryfilter2.append("username",doc.get("username"));
@@ -38,7 +38,7 @@ public class IndexAction extends AbstractAction {
 //			list.add(templist.get(0));
 //		}
 
-		ContextHolder.getRequest().setAttribute("list", userdocs);
+		ContextHolder.getRequest().setAttribute("list", docs);
 
 		return new JspView("/WEB-INF/jsp/index.jsp");
 
