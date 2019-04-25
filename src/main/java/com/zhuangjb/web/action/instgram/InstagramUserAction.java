@@ -27,8 +27,9 @@ public class InstagramUserAction extends AbstractAction {
 	public View userDetail(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// 登陆校验
 		String username = request.getParameter(DBC.username);
+
 		request.setAttribute("msg", "用户名或密码错误!");
-		return new JspView("/WEB-INF/jsp/"+username+".jsp");
+		return new JspView("/WEB-INF/jsp/userDetail.jsp");
 	}
 
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <%@include file="_header.jsp"%>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cc0383de6815676"></script>
 <body>
 
 
@@ -90,7 +89,7 @@
             %>
             <div class="col-6 col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card pt-2 border-0">
-                    <a href="/kyliejenner" class="pt-2">
+                    <a href="userDetail.action?username=<%=getString(doc.get("username"))%>" class="pt-2">
                         <img class="rounded-circle img-position" src="image/<%=getString(doc.get("username"))%>.jpg" alt="Kylie Jenner">
                         <div class="card-block text-center">
                             <h4 class="card-title text-truncate mb-0"><%=getString(doc.get("alias"))%></h4>
