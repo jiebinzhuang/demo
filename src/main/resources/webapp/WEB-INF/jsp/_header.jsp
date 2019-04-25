@@ -50,7 +50,7 @@
 	<title>Insgraph</title>
 	<link rel="stylesheet" href="../css/header.css">
 	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/社区精选.css">
+	<link rel="stylesheet" href="../css/pick.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/footer.css">
 	<script src="../js/common.js"></script>
