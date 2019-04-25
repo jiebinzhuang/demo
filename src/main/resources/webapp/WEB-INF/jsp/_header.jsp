@@ -62,7 +62,7 @@
 
 <div class="header">
 	<div class="header_logo">
-		<img src="../image/logo2.png" alt="">
+		<img src="../image/logo.png" alt="">
 		<p style="color:#FF0000">Instagram Viewer/Downloader</p>
 	</div>
 	<div class="header_middle">
