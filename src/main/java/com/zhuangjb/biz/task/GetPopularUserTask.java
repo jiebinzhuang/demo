@@ -32,8 +32,7 @@ public class GetPopularUserTask implements Runnable {
 
 			BasicDBObject qryfilter2 = new BasicDBObject();
 
-			List<Document> userdocs = MongoDAO.getInstance().find("user_popular",
-					qryfilter2);
+			List<Document> userdocs = MongoDAO.getInstance().find("user_popular",qryfilter2);
 			for (Document doc : userdocs) {
 				try {
 					InstagramUtils.updateUserInfo((String)doc.get("username"));
