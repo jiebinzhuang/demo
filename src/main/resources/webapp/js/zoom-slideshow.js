@@ -47,7 +47,7 @@
 					$(this._opt.thumbsContainer).find("img").click(function(e) {
 						me._setDefault();
 
-						me._currentImg = $('img').index(this) - 1;
+						me._currentImg = $('img').index(this) - 3;
 						var thumbImg = $(this);
 
 						me._animateThumbs(e);

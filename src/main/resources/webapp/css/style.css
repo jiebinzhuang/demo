@@ -54,7 +54,7 @@ body {
 
 #nav-left-thumbs,#nav-right-thumbs   {
     position: relative;
-    top:250px;
+    /*top:250px;*/
     width: 30px;
     height: 30px;
     line-height: 30px;
