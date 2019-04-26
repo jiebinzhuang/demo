@@ -1,6 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="UTF-8">
+
+<%@include file="include.jsp" %>
+
+
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/base.css">
+
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/style.css">
+
+<script src="../js/common.js"></script>
+<script src="../js/jquery-1.8.2.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script src="../js/jquery.lazyload.js"></script>
+
+
+
+<link rel="stylesheet" href="../css/pick.css">
+<script src="../js/shequjingxuan.js"></script>
 <%@include file="_header.jsp" %>
 
 <body>
@@ -38,7 +59,7 @@
                                 <img src="../image/user/<%=getString(doc.get("username"))%>.jpg" class="lazy">
                                 <p><%=getString(doc.get("username"))%></p>
                             </div>
-                            <a href="点击跳转画面.html" class="mask1-<%=m+1%>"></a>
+                            <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" class="mask1-<%=m+1%>"></a>
                         </div>
                     </div>
                 <%
