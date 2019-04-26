@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="UTF-8">
 <%@include file="include.jsp" %>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
     <script src="../js/jquery-1.8.2.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/jquery-1.11.0.min.js"></script>
@@ -20,6 +19,7 @@
 <body>
 <%
      org.bson.Document doc=(org.bson.Document)request.getAttribute("postdoc");
+    String[] xx= (String[]) doc.get("preview_img");
 
 %>
 <div class="card-note" id="card-note">
@@ -42,6 +42,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="note-top">
             <div class="related-tags">

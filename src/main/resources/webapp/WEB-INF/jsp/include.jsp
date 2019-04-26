@@ -45,4 +45,5 @@
 	}
 
 %>
-
+<meta charset="UTF-8">
+<title><%=system_name%></title>

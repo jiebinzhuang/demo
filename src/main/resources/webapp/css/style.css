@@ -23,14 +23,14 @@ body {
     text-align: center;
 }
 #view {
-	width: 500px;
-    height: 500px;
+	width: 800px;
+    height: 600px;
 }
 
 #view img {
     border-radius: 8px;
-    height: 500px;
-    width: 500px;
+    height: 800px;
+    width: 600px;
     box-shadow: 0 0 10px rgba(0,0,0,.6);
 }
 
@@ -52,9 +52,9 @@ body {
     margin: 2px 0 0 15px;
 }
 
-#nav-left-thumbs, #nav-right-thumbs {
+#nav-left-thumbs,#nav-right-thumbs   {
     position: relative;
-    /*top:-250px;*/
+    top:250px;
     width: 30px;
     height: 30px;
     line-height: 30px;
