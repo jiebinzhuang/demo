@@ -66,7 +66,7 @@
                     <div id="pics-thumbs">
                         <% for (Object url:list){
                         %>
-                        <img src="<%=url%>" alt="Nature1" />
+                        <img  src="<%=url%>" alt="Nature1" />
                         <%}%>
                     </div>
                 </div>
