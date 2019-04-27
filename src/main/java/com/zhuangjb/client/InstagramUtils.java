@@ -15,6 +15,10 @@ import java.util.Map;
  */
 public class InstagramUtils {
 
+    public static void main(String []atg){
+
+        InstagramUtils.getUserPost("yao",10);
+    }
 
     public static void updateUserInfo(String username){
         try {
@@ -50,7 +54,7 @@ public class InstagramUtils {
 
     public static void getUserPost(String username,int mount){
         try {
-            String json= HttpUtils.httpGet("http://127.0.0.1:5000/instagram/getPostList?username="+username+"&mount="+mount);
+            String json= HttpUtils.httpGet("http://127.0.0.1:5000/instagram/getPostList?username="+username+"&amount="+mount);
             List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
             for(Map<String,Object> map:resultMapList){
 
