@@ -52,7 +52,7 @@ $(function(){
 })
 
 
-
+//
 //鼠标移上图片会出现遮罩层
 $(function(){
     var $tdoneone=$(".td1-1");
@@ -63,67 +63,67 @@ $(function(){
         $maskoneone.css('display','none');
     })
 })
-$(function(){
-    var $tdonetwo=$(".td1-2");
-    var $maskonetwo=$(".mask1-2");
-    $tdonetwo.mouseenter(function(){
-        $maskonetwo.css('display','block');
-    }).mouseleave(function(){
-        $maskonetwo.css('display','none');
-    })
-})
-$(function(){
-    var $tdonethree=$(".td1-3");
-    var $maskonethree=$(".mask1-3");
-    $tdonethree.mouseenter(function(){
-        $maskonethree.css('display','block');
-    }).mouseleave(function(){
-        $maskonethree.css('display','none');
-    })
-})
-$(function(){
-    var $tdonefour=$(".td1-4");
-    var $maskonefour=$(".mask1-4");
-    $tdonefour.mouseenter(function(){
-        $maskonefour.css('display','block');
-    }).mouseleave(function(){
-        $maskonefour.css('display','none');
-    })
-})
-
-$(function(){
-    var $tdtwoone=$(".td2-1");
-    var $masktwoone=$(".mask2-1");
-    $tdtwoone.mouseenter(function(){
-        $masktwoone.css('display','block');
-    }).mouseleave(function(){
-        $masktwoone.css('display','none');
-    })
-})
-$(function(){
-    var $tdtwotwo=$(".td2-2");
-    var $masktwotwo=$(".mask2-2");
-    $tdtwotwo.mouseenter(function(){
-        $masktwotwo.css('display','block');
-    }).mouseleave(function(){
-        $masktwotwo.css('display','none');
-    })
-})
-$(function(){
-    var $tdtwothree=$(".td2-3");
-    var $masktwothree=$(".mask2-3");
-    $tdtwothree.mouseenter(function(){
-        $masktwothree.css('display','block');
-    }).mouseleave(function(){
-        $masktwothree.css('display','none');
-    })
-})
-$(function(){
-    var $tdtwofour=$(".td2-4");
-    var $masktwofour=$(".mask2-4");
-    $tdtwofour.mouseenter(function(){
-        $masktwofour.css('display','block');
-    }).mouseleave(function(){
-        $masktwofour.css('display','none');
-    })
-})
+// $(function(){
+//     var $tdonetwo=$(".td1-2");
+//     var $maskonetwo=$(".mask1-2");
+//     $tdonetwo.mouseenter(function(){
+//         $maskonetwo.css('display','block');
+//     }).mouseleave(function(){
+//         $maskonetwo.css('display','none');
+//     })
+// })
+// $(function(){
+//     var $tdonethree=$(".td1-3");
+//     var $maskonethree=$(".mask1-3");
+//     $tdonethree.mouseenter(function(){
+//         $maskonethree.css('display','block');
+//     }).mouseleave(function(){
+//         $maskonethree.css('display','none');
+//     })
+// })
+// $(function(){
+//     var $tdonefour=$(".td1-4");
+//     var $maskonefour=$(".mask1-4");
+//     $tdonefour.mouseenter(function(){
+//         $maskonefour.css('display','block');
+//     }).mouseleave(function(){
+//         $maskonefour.css('display','none');
+//     })
+// })
+//
+// $(function(){
+//     var $tdtwoone=$(".td2-1");
+//     var $masktwoone=$(".mask2-1");
+//     $tdtwoone.mouseenter(function(){
+//         $masktwoone.css('display','block');
+//     }).mouseleave(function(){
+//         $masktwoone.css('display','none');
+//     })
+// })
+// $(function(){
+//     var $tdtwotwo=$(".td2-2");
+//     var $masktwotwo=$(".mask2-2");
+//     $tdtwotwo.mouseenter(function(){
+//         $masktwotwo.css('display','block');
+//     }).mouseleave(function(){
+//         $masktwotwo.css('display','none');
+//     })
+// })
+// $(function(){
+//     var $tdtwothree=$(".td2-3");
+//     var $masktwothree=$(".mask2-3");
+//     $tdtwothree.mouseenter(function(){
+//         $masktwothree.css('display','block');
+//     }).mouseleave(function(){
+//         $masktwothree.css('display','none');
+//     })
+// })
+// $(function(){
+//     var $tdtwofour=$(".td2-4");
+//     var $masktwofour=$(".mask2-4");
+//     $tdtwofour.mouseenter(function(){
+//         $masktwofour.css('display','block');
+//     }).mouseleave(function(){
+//         $masktwofour.css('display','none');
+//     })
+// })

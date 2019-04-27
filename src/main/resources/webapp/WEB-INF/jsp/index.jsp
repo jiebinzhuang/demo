@@ -44,22 +44,23 @@
                 java.util.List<org.bson.Document> list=(java.util.List<org.bson.Document>)request.getAttribute("list");
                 for(int i=0;i<list.size()/4;i++){
             %>
-            <div class="td<%=i+1%> fl">
+            <div class="td1 fl">
                     <%
                 int k=i*4;
 				for(int m=0;m<4;m++){
 					org.bson.Document doc=list.get(k+m);
 			%>
                     <div>
-                        <div class="td<%=i+1%>-<%=m+1%> fl">
+                        <div class="td1-<%=m+1%> fl">
+                            <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" >
                             <img src="<%=getString(doc.get("preview_img"))%>" class="lazy"
                                  xsrc="../images/c41aa233-59f7-554f-a6e2-ce47d9a43155.jpg">
                             <%--<p>讲真，如果你不看到最后，你知道这个是什么吗？</p>--%>
-                            <div class="di<%=i+1%>-<%=m+1%>">
+                            <div class="di1-<%=m+1%>">
                                 <img src="../image/user/<%=getString(doc.get("username"))%>.jpg" class="lazy">
                                 <p><%=getString(doc.get("username"))%></p>
                             </div>
-                            <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" class="mask<%=i+1%>-<%=m+1%>"></a>
+                            </a>
                         </div>
                     </div>
                 <%
