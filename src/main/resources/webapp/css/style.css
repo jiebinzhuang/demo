@@ -14,7 +14,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, .8);
     display: none;
 }
-
+#wrapper_video {
+    margin: 0 auto;
+    width: 800px;
+    height:600px;
+    position: relative;
+}
 #wrapper {
     margin: 0 auto;
     width: 960px;

@@ -31,26 +31,27 @@ public class InstagramUserAction extends AbstractAction {
 		// 登陆校验
 		String id = request.getParameter(DBC.id);
 		BasicDBObject qryfilter2 = new BasicDBObject();
-        qryfilter2.put(DBC.id, new ObjectId(id));
+		qryfilter2.put(DBC.id, new ObjectId(id));
 
 		List<Document> docs = MongoDAO.getInstance().find("posts_info",
 				qryfilter2);
-		if(docs ==null){
+		if (docs == null) {
 			throw new Exception("Data is Null");
 		}
 		request.setAttribute("postdoc", docs.get(0));
-        if(docs.get(0).get("imgs")!=null){
-			ArrayList xx= (ArrayList) docs.get(0).get("imgs");
-			if(xx!=null && xx.size()>0){
+		if (docs.get(0).get("imgs") != null) {
+			ArrayList xx = (ArrayList) docs.get(0).get("imgs");
+			if (xx != null && xx.size() > 0) {
 				return new JspView("/WEB-INF/jsp/imageDetail.jsp");
 
 			}
 		}
 
-		return new JspView("/WEB-INF/jsp/postDetail.jsp");
-
+		if (docs.get(0).get("video_url") != null) {
+			return new JspView("/WEB-INF/jsp/postDetail.jsp");
+		}else{
+			throw new Exception("Server Error");
+		}
 
 	}
-
-
 }
