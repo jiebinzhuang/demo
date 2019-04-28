@@ -15,14 +15,14 @@ import java.util.Map;
  */
 public class InstagramUtils {
 
+    public static String URL_ADDR="http://127.0.0.1:5000/";
     public static void main(String []atg){
-
-        InstagramUtils.getUserPost("yao",10);
+        InstagramUtils.getUserPost("jaychou",10);
     }
 
     public static void updateUserInfo(String username){
         try {
-            String json= HttpUtils.httpGet("http://127.0.0.1:5000/instagram/getUserInfo?username="+username);
+            String json= HttpUtils.httpGet(URL_ADDR+"instagram/getUserInfo?username="+username);
             Map<String, Object> resultMap= JsonUtil.jsonToMap(json);
 
             BasicDBObject qryfilter2 = new BasicDBObject();
@@ -54,7 +54,7 @@ public class InstagramUtils {
 
     public static void getUserPost(String username,int mount){
         try {
-            String json= HttpUtils.httpGet("http://127.0.0.1:5000/instagram/getPostList?username="+username+"&amount="+mount);
+            String json= HttpUtils.httpGet(URL_ADDR+"instagram/getPostList?username="+username+"&amount="+mount);
             List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
             for(Map<String,Object> map:resultMapList){
 
