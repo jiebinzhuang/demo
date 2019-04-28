@@ -58,8 +58,11 @@
 
                 <div class="td2-<%=k+1%>">
                     <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" >
-                        <img src="<%=getString(doc.get("preview_img"))%>" class="lazy"
-                             xsrc="../images/c41aa233-59f7-554f-a6e2-ce47d9a43155.jpg">
+                        <% if(!"".equals(getString(doc.get("video_url")))){%>
+                        <i class="fr fa fa-video-camera fa-5x fa-inverse" aria-hidden="true"></i>
+                        <% }%>
+                        <img src="<%=getString(doc.get("preview_img"))%>" class="lazy">
+
                         <%--<p>讲真，如果你不看到最后，你知道这个是什么吗？</p>--%>
                         <div class="di2-<%=k+1%>">
                             <img src="../image/user/<%=getString(doc.get("username"))%>.jpg" class="lazy">
