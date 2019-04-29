@@ -9,6 +9,10 @@
 <script src="../js/jquery-1.11.0.min.js"></script>
 <script src="../js/zoom-slideshow.js"></script>
 <script src="../js/postdetail.js"></script>
+<script src="../js/download.js"></script>
+
+<%--<script src='//js.zapjs.com/js/download.js'></script>--%>
+
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/header.css">
@@ -64,7 +68,7 @@
                 <span class="time"><%=doc.get("date")%></span>
             </div>
             <div class="right-tag">
-                <%--<a onclick="window.open('https://scontent-hkg3-1.cdninstagram.com/vp/afacc5bde4eed94a37e661aa823dcbc4/5CC68760/t50.2886-16/58673830_135571454251749_8238907259084646332_n.mp4?_nc_ht=scontent-hkg3-1.cdninstagram.com')"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>--%>
+                <a href="javascript:void(0);" onclick="dl()"><i class="fa fa-download d-inline-block mr-1"></i>Download</a>
                 <span class="like">
                     <i></i>
                     <span>353</span>
@@ -79,37 +83,7 @@
                 </span>
             </div>
         </div>
-        <%--<div class="alltip">--%>
-        <%--<h3 class="top">--%>
-        <%--<i class="remain"></i>--%>
-        <%--<span class="brief">Comments</span>--%>
-        <%--</h3>--%>
-        <%--<div class="content">--%>
-        <%--<div class="comment">--%>
-        <%--<div class="comment-info">--%>
-        <%--<div class="user">--%>
-        <%--<a href="">--%>
-        <%--<img src="../images/57a29c255e87e7065f186579.jpg@80w_80h_90q_1e_1c_1x.jpg" alt="" class="avatar">--%>
-        <%--</a>--%>
-        <%--<div class="user-info">--%>
-        <%--<a href="" class="user-name">Jelly</a>--%>
-        <%--<span class="ptime">2018-12-13 04:36</span>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="like">--%>
-        <%--<i class="icon">--%>
-        <%--<img src="../images/heart.png" alt="" style="width:20px;height: 20px">--%>
-        <%--</i>--%>
-        <%--<span class="zan">8</span>--%>
-        <%--</div>--%>
-        <%--</div>--%>
 
-        <%--</div>--%>
-
-        <%--<div class="bottom"></div>--%>
-        <%--</div>--%>
-        <%--<div style="display: none"></div>--%>
-        <%--</div>--%>
     </div>
 
     <div class="load" style="display: none">
@@ -130,6 +104,10 @@
 <!--//鼠标移入显示二维码-->
 <!--回到顶部-->
 <script>
+//    download('https://scontent-hkg3-1.cdninstagram.com/vp/afacc5bde4eed94a37e661aa823dcbc4/5CC68760/t50.2886-16/58673830_135571454251749_8238907259084646332_n.mp4?_nc_ht=scontent-hkg3-1.cdninstagram.com','beyonce.mp4','video/mp4');
+    function dl() {
+        download('<%=doc.get("video_url")%>','<%=doc.get("username")%>.mp4','video/mp4')
+    }
     var smallewm=document.querySelectorAll(".smallewm")[0];
     var bigewm=document.querySelectorAll(".bigewm")[0];
     smallewm.onmouseenter=function (){
