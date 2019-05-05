@@ -22,6 +22,23 @@ import java.util.List;
 
 public class InstagramUserAction extends AbstractAction {
 
+	/**
+	 * 登录校验(ajax)
+	 */
+	@At("/userIndex")
+	public View userIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// 登陆校验
+		BasicDBObject qryfilter2 = new BasicDBObject();
+
+		List<Document> list = MongoDAO.getInstance().find("user_popular",
+				qryfilter2);
+
+		request.setAttribute("userList",list);
+
+		return new JspView("/WEB-INF/jsp/userIndex.jsp");
+
+
+	}
 
 	/**
 	 * 登录校验(ajax)

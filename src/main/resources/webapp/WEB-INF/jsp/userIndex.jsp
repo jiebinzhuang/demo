@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/normalize.css">
-<link rel="stylesheet" href="../css/品牌账号.css">
-<link rel="icon" sizes="any" mask="" href="//ci.xiaohongshu.com/953e8240-67d1-4d6d-94f3-fa699ad27b9a">
+<link rel="stylesheet" href="../css/brand.css">
+<link rel="stylesheet" href="../css/third.css">
+
 <style>
 
 
@@ -164,12 +165,35 @@
 %>
 <div class="business-page pc-container">
 	<div class="container">
-		<div class="inner-brief">
-			<h2>品牌认证优势</h2>
-			<p>官方品牌认证，多种特权专享</p>
-			<div class="content">
-				<div class="back"></div>
-				<div class="all-list ">
+			<div class="inner-brief">
+				 <h2>Search Instagram</h2>
+				<div class="login-input">
+					<p><input   type="text" id="txt" placeholder="Search Instagram User Or Tag">
+						<button class="btn" id="btn">Search</button></p>
+				</div>
+				<%--<h2>Most Popular Instagram Hashtags</h2>--%>
+				<%--<div>--%>
+					<%--<p>--%>
+					<%--<button class="btn" style="height: 20px;width: 60px" >#xasd</button>--%>
+
+						<%--<button class="btn" style="height: 20px;width: 60px" >#dfs</button>--%>
+						<%--<button class="btn" style="height: 20px;width: 60px" >#sfgd</button>--%>
+						<%--<button class="btn" style="height: 20px;width: 60px" >#dd</button>--%>
+						<%--<button class="btn" style="height: 20px;width: 60px" >#fds</button>--%>
+
+						<%--<button class="btn" style="height: 20px;width: 60px" >#dfs</button>--%>
+						<%--<button class="btn" style="height: 20px;width: 60px" >#sfgd</button>--%>
+						<%--<button class="btn" style="height: 20px;width: 60px" >#dd</button>--%>
+					<%--<button class="btn" style="height: 20px;width: 60px" >#dfs</button>--%>
+					<%--<button class="btn" style="height: 20px;width: 60px" >#sfgd</button>--%>
+					<%--<button class="btn" style="height: 20px;width: 60px" >#dd</button>--%>
+					<%--<button class="btn" style="height: 20px;width: 60px" >#dddfds</button></p>--%>
+
+				<%--</div>--%>
+			    <h2>Instagram Popular User</h2>
+			    <div class="content">
+				   <div class="back"></div>
+				    <div class="all-list ">
 					<div class="each-card fadeInLeft animated aniD1 aniDe1">
 						<img src="../images/4e30f1cc-997d-4f09-a556-15738a145cc5.png" alt="">
 						<h6>官方认证</h6>
@@ -206,177 +230,7 @@
 				<a href="社区推广平台.html" class="btn">立即申请</a>
 			</div>
 		</div>
-		<div class="inner-enter">
-			<h2>品牌认证流程</h2>
-			<h5>通过品牌认证流程，成为官方品牌账号</h5>
-			<div class="inner-flow">
-				<div class="list">
-					<img src="../images/946156ec-5ad1-4ad9-b0c3-770c7f54005e.png" alt="">
-					<p class="title">1.点击立即申请</p>
-					<div class="content">
-						<p>使用小红书APP账号</p>
-						<div>
-							<p>登录ares.xiaohongshu.com</p>
-						</div>
-					</div>
-				</div>
-				<div class="list">
-					<img src="../images/94599ec3-d790-4459-aab9-16d5d038ba38.png" alt="">
-					<p class="title">2.提交认证材料</p>
-					<div class="content">
-						<p>根据提示要求，提交认证材料</p>
-						<div>
-							<a href="#mao">查看认证材料要求</a>
-						</div>
-					</div>
-				</div>
-				<div class="list">
-					<img src="../images/cf214749-1e2f-4092-adb6-b8dd3dea3f58.png" alt="">
-					<p class="title" >3.开启认证</p>
-					<div class="content">
-						<p>成为品牌账号</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="mao" class="inner-detail">
-			<h4>品牌认证指南</h4>
-			<div class="top-topic">
-				<div class="inner select">国内品牌</div>
-				<div class="inner">国外品牌</div>
-			</div>
-			<div class="middle-topic" >
-				<div class="inner">
-					<h4>基础信息</h4>
-					<ul>
-						<div class="main"><p class="info">账号名字</p></div>
-						<div class="main"><p class="info">品牌简介</p></div>
-						<div class="main"><p class="info">行业类别</p></div>
-						<div class="main"><p class="info">所在地</p></div>
-					</ul>
-				</div>
-				<div class="inner">
-					<h4>头像/证明材料</h4>
-					<ul>
-						<div class="main">
-							<p class="info">头像</p>
-							<li>头像必须为品牌形象，如品牌LOGO或企业商标</li>
-						</div>
-						<div class="main">
-							<p class="info">认证公函</p>
-							<li>
-								<span>公函需下载打印填写，并加盖</span>
-								<span class="red">品牌方</span>
-								<span>的实体公章后拍摄上传，公函中的“小红书账号名字”需与商标注册证一致 </span>
-								<a href="../images/42cf420c-70b0-4a1c-b438-57b03e12370c.png" target="_blank">查看示例</a>
-								<a href="../images/application.pdf" target="_blank">获取认证公函</a>
-							</li>
-						</div>
-						<div class="main">
-							<p class="info">企业营业执照</p>
-							<li>
-								<span>上传</span>
-								<span class="red">品牌方</span>
-								<span> 的中国大陆工商局或市场监督管理局的最新工商营业执照（三证合一） </span>
-								<a href="../images/dae20c4e-c3c5-473a-84ad-547f57f6ad32.png" target="_blank">查看示例</a>
-							</li>
-						</div>
-						<div class="main">
-							<p class="info">商标注册证</p>
-							<li>若品牌认证名称/信息包含品牌，需上传商标注册证</li>
-						</div>
-						<div class="main">
-							<p class="info">网站ICP备案截图</p>
-							<li>若品牌账号认证内容为网站，需上传网站在工信部网站备案查询的截图，要求内容真实完整、清晰可识别，需加盖网站主办单位公章</li>
-						</div>
-						<div class="main">
-							<p class="info">软件著作证</p>
-							<li>若品牌账号认证内容为软件/APP，需提供软件著作权登记证书原件彩色扫描件
-							</li>
-						</div>
-					</ul>
-				</div>
-				<div class="inner">
-					<h4>企业信息</h4>
-					<ul>
-						<div class="main"><p class="info">企业名称</p></div>
-						<div class="main"><p class="info">统一社会信用代码</p></div>
-						<div class="main"><p class="info">营业期限</p></div>
-						<div class="main"><p class="info">运营者姓名</p></div>
-						<div class="main"><p class="info">运营者手机号</p></div>
-					</ul>
-				</div>
-			</div>
-			<div class="middle-topic" style="display: none">
-				<div class="inner">
-					<h4>基础信息</h4>
-					<ul>
-						<div class="main"><p class="info">账号名字</p></div>
-						<div class="main"><p class="info">品牌简介</p></div>
-						<div class="main"><p class="info">行业类别</p></div>
-						<div class="main"><p class="info">所在地</p></div>
-					</ul>
-				</div>
-				<div class="inner">
-					<h4>头像/证明材料</h4>
-					<ul>
-						<div class="main">
-							<p class="info">头像</p>
-							<li>头像必须为品牌形象，如品牌LOGO或企业商标</li>
-						</div>
-						<div class="main">
-							<p class="info">认证公函</p>
-							<li>
-								<span>公函需下载打印填写，并加盖</span>
-								<span class="red">品牌方</span>
-								<span>的实体公章后拍摄上传，公函中的“小红书账号名字”需与商标注册证一致 </span>
-							</li>
-						</div>
-						<div class="main">
-							<p class="info">公司注册文件</p>
-							<li>
-								Business registration（简称“BR”）或Certificate of incorporation（简称“CR”）的原件彩色扫描件，若为香港公司，BR和CR均需上传。
-							</li>
-						</div>
-						<div class="main">
-							<p class="info">商标注册证</p>
-							<li>若品牌认证名称/信息包含品牌，需上传商标注册证</li>
-						</div>
-						<div class="main">
-							<p class="info">网站ICP备案截图</p>
-							<li>若品牌账号认证内容为网站，需上传网站在工信部网站备案查询的截图，要求内容真实完整、清晰可识别，需加盖网站主办单位公章</li>
-						</div>
-					</ul>
-				</div>
-				<div class="inner">
-					<h4>企业信息</h4>
-					<ul>
-						<div class="main"><p class="info">企业名称</p></div>
-						<div class="main"><p class="info">统一社会信用代码</p></div>
-						<div class="main"><p class="info">营业期限</p></div>
-						<div class="main"><p class="info">运营者姓名</p></div>
-						<div class="main"><p class="info">运营者手机号</p></div>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="inner-issue">
-			<h2>常见问题</h2>
-			<div class="allissue">
-				<div class="inner">
-					<h4>Q：什么是品牌方？</h4>
-					<p>A：一般情况下，品牌方指商标注册人。</p>
-				</div>
-				<div class="inner">
-					<h4>Q：关于营业执照的要求</h4>
-					<p>A：上传品牌方的中国大陆工商局或市场监督管理局的最新工商营业执照（三证合一）</p>
-				</div>
-				<div class="inner">
-					<h4>Q：关于认证公函的要求</h4>
-					<p>A：公函需下载打印填写，并加盖品牌方的实体公章后拍摄上传，公函中的“小红书账号名字”需与商标注册证一致</p>
-				</div>
-			</div>
-		</div>
+
 	</div>
 </div>
 <!--foot-bottom的制作-->

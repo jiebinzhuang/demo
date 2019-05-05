@@ -30,7 +30,7 @@ div{
     position: relative;
 }
 .container .inner-brief .content .back{
-    background: linear-gradient(to right, #ff5267, #ff7d8d);
+    background: linear-gradient(to right, #deffe2, #ff0c15);
     height: 365px;
     width: 980px;
     border-radius: 8px;

@@ -34,16 +34,16 @@ public class GetPopularUserTask implements Runnable {
 
 			List<Document> userdocs = MongoDAO.getInstance().find("user_popular",
 					qryfilter2);
-			InstagramUtils.getUserPost("beyonce",1);
-//			for (Document doc : userdocs) {
-//				try {
-//					InstagramUtils.updateUserInfo((String)doc.get("username"));
-//
-//					InstagramUtils.getUserPost((St	ring)doc.get("username"),1);
-//				} catch (Exception e1) {
-//					log.error("update data error",e1);
-//				}
-//			}
+//			InstagramUtils.getUserPost("beyonce",1);
+			for (Document doc : userdocs) {
+				try {
+					InstagramUtils.updateUserInfo((String)doc.get("username"));
+
+					InstagramUtils.getUserPost((String)doc.get("username"),5);
+				} catch (Exception e1) {
+					log.error("update data error",e1);
+				}
+			}
 			SystemUtils.delayTimer(600000);
 
 		}
