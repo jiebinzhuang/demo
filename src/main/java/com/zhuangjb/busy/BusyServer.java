@@ -3,6 +3,7 @@ package com.zhuangjb.busy;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zhuangjb.biz.task.GetTagTask;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -50,30 +51,22 @@ public class BusyServer {
 			if (this.isRunning()) {
 				throw new RuntimeException("服务运行中,状态不正常,业务服务无法启动!");
 			}
-			// if (!LicenseUtils.checkLicense()) {
-			// throw new RuntimeException("授权文件校验失败,可能已过期!");
-			// }
+
 
 			// 设置线程停止信号为false
 			this.setStopThreadSignal(false);
 
-			/**
-			 * 业务处理
-			 */
-//			if (ConfigUtils.getConfig().getAutoXiazhuTask() == 1) {
-//				// 订单接口处理线程
-//				AutoXiazhuTask processor = new AutoXiazhuTask();
-//				Thread thread = new Thread(processor);
-//				thread.setName("autoXiazhuProcessor");
-//				threadPool.add(thread);
-//			}
-//
-//			// 订单接口处理线程
-			GetPopularUserTask getdatatask = new GetPopularUserTask();
-			Thread getdatathread = new Thread(getdatatask);
-			getdatathread.setName("GetPopularUserTask");
-			threadPool.add(getdatathread);
 
+//			GetPopularUserTask getdatatask = new GetPopularUserTask();
+//			Thread getdatathread = new Thread(getdatatask);
+//			getdatathread.setName("GetPopularUserTask");
+//			threadPool.add(getdatathread);
+
+
+			GetTagTask tagask = new GetTagTask();
+			Thread tagaskthread = new Thread(tagask);
+			tagaskthread.setName("GetTagTask");
+			threadPool.add(tagaskthread);
 
 			this.setRunning(true);
 

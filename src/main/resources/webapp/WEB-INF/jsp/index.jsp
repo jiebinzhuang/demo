@@ -75,13 +75,94 @@
              <%}%>
         </li>
         <li>
+            <%
+                java.util.List<org.bson.Document> fashionlist=(java.util.List<org.bson.Document>)request.getAttribute("fashionlist");
+                for(int i=0;i<=fashionlist.size()/4;i++){
+            %>
+            <div class="td2 fl">
+                <%
+                    int start=4*i;
+                    int end=4;
+                    if(i==fashionlist.size()/4){
+                        end=fashionlist.size()%4;
+                    }
 
+                    for(int k=0;k<end;k++){
+                        org.bson.Document doc=fashionlist.get(k+start);
+                %>
+
+                <div class="td2-<%=k+1%>">
+                    <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" >
+                        <% if(!"".equals(getString(doc.get("video_url")))){%>
+                        <i class="fr fa fa-video-camera fa-5x fa-inverse" aria-hidden="true"></i>
+                        <% }%>
+                        <img src="<%=getString(doc.get("preview_img"))%>" class="lazy">
+
+                    </a>
+                </div>
+                <% }%>
+            </div>
+            <%}%>
 
         </li>
         <li>
+            <%
+                java.util.List<org.bson.Document> beautylist=(java.util.List<org.bson.Document>)request.getAttribute("beautylist");
+                for(int i=0;i<=beautylist.size()/4;i++){
+            %>
+            <div class="td2 fl">
+                <%
+                    int start=4*i;
+                    int end=4;
+                    if(i==beautylist.size()/4){
+                        end=beautylist.size()%4;
+                    }
 
+                    for(int k=0;k<end;k++){
+                        org.bson.Document doc=beautylist.get(k+start);
+                %>
+
+                <div class="td2-<%=k+1%>">
+                    <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" >
+                        <% if(!"".equals(getString(doc.get("video_url")))){%>
+                        <i class="fr fa fa-video-camera fa-5x fa-inverse" aria-hidden="true"></i>
+                        <% }%>
+                        <img src="<%=getString(doc.get("preview_img"))%>" class="lazy">
+
+                    </a>
+                </div>
+                <% }%>
+            </div>
+            <%}%>
         </li>
-        <li> </li>
+        <li> <%
+            java.util.List<org.bson.Document> foodslist=(java.util.List<org.bson.Document>)request.getAttribute("foodslist");
+            for(int i=0;i<=foodslist.size()/4;i++){
+        %>
+            <div class="td2 fl">
+                <%
+                    int start=4*i;
+                    int end=4;
+                    if(i==foodslist.size()/4){
+                        end=foodslist.size()%4;
+                    }
+
+                    for(int k=0;k<end;k++){
+                        org.bson.Document doc=foodslist.get(k+start);
+                %>
+
+                <div class="td2-<%=k+1%>">
+                    <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" >
+                        <% if(!"".equals(getString(doc.get("video_url")))){%>
+                        <i class="fr fa fa-video-camera fa-5x fa-inverse" aria-hidden="true"></i>
+                        <% }%>
+                        <img src="<%=getString(doc.get("preview_img"))%>" class="lazy">
+
+                    </a>
+                </div>
+                <% }%>
+            </div>
+            <%}%> </li>
         <li> </li>
         <li> </li>
         <li> </li>
