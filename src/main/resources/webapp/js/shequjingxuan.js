@@ -15,22 +15,22 @@ $(function(){
 })
 
 
-//导航栏遍历
-window.onload = function() {
-    var sp = document.getElementsByTagName("span");
-    var alli = document.querySelector(".bd").getElementsByTagName("li");
-    for(var i = 0; i < sp.length; i++) {
-        sp[i].index = i;
-        sp[i].onclick = function() {
-            for(var j = 0; j <sp.length; j++) {
-                sp[j].className = "";
-                alli[j].className ="";
-            }
-            this.className = "current";
-            alli[this.index].className = "show";
-        }
-    }
-}
+// //导航栏遍历
+// window.onload = function() {
+//     var sp = document.getElementsByTagName("span");
+//     var alli = document.querySelector(".bd").getElementsByTagName("li");
+//     for(var i = 0; i < sp.length; i++) {
+//         sp[i].index = i;
+//         sp[i].onclick = function() {
+//             for(var j = 0; j <sp.length; j++) {
+//                 sp[j].className = "";
+//                 alli[j].className ="";
+//             }
+//             this.className = "current";
+//             alli[this.index].className = "show";
+//         }
+//     }
+// }
 //懒加载
 $(function() {
     var $img=$("img");

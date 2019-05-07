@@ -28,48 +28,59 @@ public class IndexAction extends AbstractAction {
 		BasicDBObject qryfilter2 = new BasicDBObject();
 
 		List<Document> list= new ArrayList();
+		String type = request.getParameter("type");
+        if(type==null||"".equals(type)||"hot".equals(type)){
+			  list = MongoDAO.getInstance().find("posts_info",
+					qryfilter2);
+			ContextHolder.getRequest().setAttribute("list", list);
+			return new JspView("/WEB-INF/jsp/index.jsp");
+		}else {
 
-		List<Document> docs = MongoDAO.getInstance().find("posts_info",
-				qryfilter2);
+			list = MongoDAO.getInstance().find("posts_"+type,
+					qryfilter2);
+			ContextHolder.getRequest().setAttribute("list", list);
+			return new JspView("/WEB-INF/jsp/"+type+".jsp");
+		}
 
-		List<Document> fashionlist = MongoDAO.getInstance().find("posts_fashion",
-				qryfilter2);
+//
+//		List<Document> fashionlist = MongoDAO.getInstance().find("posts_fashion",
+//				qryfilter2);
+//
+//		List<Document> beautylist = MongoDAO.getInstance().find("posts_beauty",
+//				qryfilter2);
+//		List<Document> foodslist = MongoDAO.getInstance().find("posts_foods",
+//				qryfilter2);
+//		List<Document> sportslist = MongoDAO.getInstance().find("posts_sports",
+//				qryfilter2);
+//		List<Document> movielist = MongoDAO.getInstance().find("posts_movie",
+//				qryfilter2);
+//		List<Document> travellist = MongoDAO.getInstance().find("posts_travel",
+//				qryfilter2);
+//		List<Document> digitallist = MongoDAO.getInstance().find("posts_digital",
+//				qryfilter2);
+//		List<Document> booklist = MongoDAO.getInstance().find("posts_book",
+//				qryfilter2);
+//		List<Document> jokelist = MongoDAO.getInstance().find("posts_joke",
+//				qryfilter2);
 
-		List<Document> beautylist = MongoDAO.getInstance().find("posts_beauty",
-				qryfilter2);
-		List<Document> foodslist = MongoDAO.getInstance().find("posts_foods",
-				qryfilter2);
-		List<Document> sportslist = MongoDAO.getInstance().find("posts_sports",
-				qryfilter2);
-		List<Document> movielist = MongoDAO.getInstance().find("posts_movie",
-				qryfilter2);
-		List<Document> travellist = MongoDAO.getInstance().find("posts_travel",
-				qryfilter2);
-		List<Document> digitallist = MongoDAO.getInstance().find("posts_digital",
-				qryfilter2);
-		List<Document> booklist = MongoDAO.getInstance().find("posts_book",
-				qryfilter2);
-		List<Document> jokelist = MongoDAO.getInstance().find("posts_joke",
-				qryfilter2);
 
 
 
-		ContextHolder.getRequest().setAttribute("list", docs);
-		ContextHolder.getRequest().setAttribute("fashionlist", fashionlist);
+//		ContextHolder.getRequest().setAttribute("fashionlist", fashionlist);
+//
+//		ContextHolder.getRequest().setAttribute("beautylist", beautylist);
+//		ContextHolder.getRequest().setAttribute("foodslist", foodslist);
+//		ContextHolder.getRequest().setAttribute("sportslist", sportslist);
+//
+//		ContextHolder.getRequest().setAttribute("movielist", movielist);
+//		ContextHolder.getRequest().setAttribute("travellist", travellist);
+//
+//		ContextHolder.getRequest().setAttribute("digitallist", digitallist);
+//
+//		ContextHolder.getRequest().setAttribute("booklist", booklist);
+//		ContextHolder.getRequest().setAttribute("jokelist", jokelist);
 
-		ContextHolder.getRequest().setAttribute("beautylist", beautylist);
-		ContextHolder.getRequest().setAttribute("foodslist", foodslist);
-		ContextHolder.getRequest().setAttribute("sportslist", sportslist);
 
-		ContextHolder.getRequest().setAttribute("movielist", movielist);
-		ContextHolder.getRequest().setAttribute("travellist", travellist);
-
-		ContextHolder.getRequest().setAttribute("digitallist", digitallist);
-
-		ContextHolder.getRequest().setAttribute("booklist", booklist);
-		ContextHolder.getRequest().setAttribute("jokelist", jokelist);
-
-		return new JspView("/WEB-INF/jsp/index.jsp");
 
 	}
 }

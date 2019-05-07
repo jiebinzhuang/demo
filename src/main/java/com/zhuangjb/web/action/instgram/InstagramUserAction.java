@@ -6,6 +6,7 @@ import com.zhuangjb.mongodb.MongoDAO;
 import com.zhuangjb.system.Constants;
 import com.zhuangjb.util.MD5;
 import com.zhuangjb.web.action.AbstractAction;
+import com.zhuangjb.web.filter.ContextHolder;
 import com.zhuangjb.web.server.WebServerConfigUtils;
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -22,9 +23,7 @@ import java.util.List;
 
 public class InstagramUserAction extends AbstractAction {
 
-	/**
-	 * 登录校验(ajax)
-	 */
+
 	@At("/userIndex")
 	public View userIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// 登陆校验
@@ -40,9 +39,6 @@ public class InstagramUserAction extends AbstractAction {
 
 	}
 
-	/**
-	 * 登录校验(ajax)
-	 */
 	@At("/postDetail")
 	public View postDetail(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// 登陆校验
@@ -50,7 +46,16 @@ public class InstagramUserAction extends AbstractAction {
 		BasicDBObject qryfilter2 = new BasicDBObject();
 		qryfilter2.put(DBC.id, new ObjectId(id));
 
-		List<Document> docs = MongoDAO.getInstance().find("posts_info",
+		String type = request.getParameter("type");
+
+		String tableName;
+		if(type==null||"".equals(type)||"hot".equals(type)){
+			 tableName="posts_info";
+		}else {
+			tableName="posts_"+type;
+		}
+
+		List<Document> docs = MongoDAO.getInstance().find(tableName,
 				qryfilter2);
 		if (docs == null) {
 			throw new Exception("Data is Null");

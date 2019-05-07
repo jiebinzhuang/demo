@@ -27,18 +27,19 @@
 <body>
 <div class="box" id="box">
     <div class="tab" id="tab">
-        <span class="current" style="width: 100px">Hot</span>
+        <span  style="width: 100px"><a href="index?type=hot" title="Instagram Posts">Hot</a></span>
         <span style="width: 100px"><a href="index?type=fashion" title="Instagram Posts">Fashion</a></span>
-        <span style="width: 100px"><a href="index?type=beauty" title="Instagram Posts">Beauty</a></span>
-        <span style="width: 100px"><a href="index?type=foods" title="Instagram Posts">Foods</a></span>
-        <span style="width: 100px"><a href="index?type=sports" title="Sports">Sports</a></span>
-        <span style="width: 100px"><a href="index?type=movie" title="Instagram Movie">Movie</a></span>
+        <span style="width: 100px"><a href="index?type=beauty" title="Instagram Beauty">Beauty</a></span>
+        <span  style="width: 100px"><a href="index?type=foods" title="Instagram Foods">Foods</a></span>
+        <span  style="width: 100px"><a href="index?type=sports" title="Sports">Sports</a></span>
+        <span class="current" style="width: 100px"><a href="index?type=movie" title="Instagram Movie">Movie</a></span>
         <span style="width: 100px"><a href="index?type=travel" title="Instagram Travel">Travel</a></span>
         <span style="width: 100px"><a href="index?type=digital" title="Instagram Digital">Digital</a></span>
         <span style="width: 100px"><a href="index?type=book" title="Instagram Book">Book</a></span>
         <span style="width: 100px"><a href="index?type=joke" title="Instagram Joke">Joke</a></span>
     </div>
     <div class="bd">
+        <li></li>
         <li class="show">
             <%
                 java.util.List<org.bson.Document> list=(java.util.List<org.bson.Document>)request.getAttribute("list");
@@ -57,25 +58,24 @@
                 %>
 
                 <div class="td2-<%=k+1%>">
-                    <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" >
+                    <a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(doc.get("_id"))%>" >
                         <% if(!"".equals(getString(doc.get("video_url")))){%>
                         <i class="fr fa fa-video-camera fa-5x fa-inverse" aria-hidden="true"></i>
                         <% }%>
                         <img src="<%=getString(doc.get("preview_img"))%>" class="lazy">
 
-                        <%--<p>讲真，如果你不看到最后，你知道这个是什么吗？</p>--%>
                         <div class="di2-<%=k+1%>">
-                            <img src="../image/user/<%=getString(doc.get("username"))%>.jpg" class="lazy">
-                            <p><%=getString(doc.get("username"))%></p>
+                            <img src="../image/tag.png" class="lazy">
+                            <p>#<%=request.getParameter("type")%></p>
                         </div>
                     </a>
-                </div>
-                 <% }%>
-            </div>
-             <%}%>
-        </li>
 
-        <li> </li>
+                </div>
+                <% }%>
+            </div>
+            <%}%>
+
+        </li>
         <li> </li>
     </div>
 </div>
