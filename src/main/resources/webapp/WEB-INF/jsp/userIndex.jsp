@@ -167,10 +167,12 @@
 	<div class="container">
 			<div class="inner-brief">
 				 <h2>Search Instagram</h2>
+				<form name="searchForm" method="post">
 				<div class="login-input">
-					<p><input   type="text" id="txt" placeholder="Search Instagram User Or Tag">
-						<button class="btn" id="btn">Search</button></p>
+					<p><input   type="text" name="content" id="txt" placeholder="Search Instagram User Or Tag">
+						<button type="submit" class="btn" id="btn">Search</button></p>
 				</div>
+				</form>
 				<%--<h2>Most Popular Instagram Hashtags</h2>--%>
 				<%--<div>--%>
 					<%--<p>--%>

@@ -6,8 +6,11 @@ import com.zhuangjb.mongodb.MongoDAO;
 import com.zhuangjb.util.DateUtils;
 import com.zhuangjb.util.HttpUtils;
 import com.zhuangjb.util.JsonUtil;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.bson.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +18,7 @@ import java.util.Map;
  * Created by zhuangjb on 2019/4/25.
  */
 public class InstagramUtils {
+    protected Log log = LogFactory.getLog(this.getClass());
 
     public static String URL_ADDR="http://127.0.0.1:5000/";
     public static void main(String []atg){
@@ -110,7 +114,6 @@ public class InstagramUtils {
                     System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
                     userdoc.put(entry.getKey(), entry.getValue());
                 }
-//                userdoc.put("username",username);
                 userdoc.put("ts", DateUtils.getTS());
                 if (isExist){
                     MongoDAO.getInstance().findOneAndUpdate(
@@ -124,6 +127,46 @@ public class InstagramUtils {
         } catch (Exception e1) {
             e1.printStackTrace();
         }
+    }
+
+
+    public  Object [] search(String content){
+        try {
+
+            String json= HttpUtils.httpGet(URL_ADDR+"instagram/search?content="+content);
+            log.info("xxx:"+json );
+            json=json.substring(1);
+            log.info("xxx:"+json );
+            json=json.substring(0,json.length()-1);
+            log.info("xxx:"+json );
+            json=json.replace("\\","");
+            log.info("xxx:"+json );
+
+
+            Map resultMap = JsonUtil.jsonToMap(json);
+            ArrayList<Map> user= (ArrayList) resultMap.get("users");
+            ArrayList<Map> hashtags= (ArrayList) resultMap.get("hashtags");
+            log.info("hashtags:"+hashtags );
+
+
+            Object [] results=new Object[100];
+            for(Map map:user){
+                 Double position= (Double) map.get("position");
+//                 Integer xx=Integer.valueOf(position);
+                results[position.intValue()]=map.get("user");
+
+            }
+            for(Map map:hashtags){
+                Double position= (Double) map.get("position");
+
+                results[position.intValue()]=map.get("hashtag");
+            }
+            return results;
+
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return null;
     }
 
 //

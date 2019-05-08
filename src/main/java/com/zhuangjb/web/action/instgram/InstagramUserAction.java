@@ -2,6 +2,7 @@ package com.zhuangjb.web.action.instgram;
 
 import com.mongodb.BasicDBObject;
 import com.zhuangjb.busy.DBC;
+import com.zhuangjb.client.InstagramUtils;
 import com.zhuangjb.mongodb.MongoDAO;
 import com.zhuangjb.system.Constants;
 import com.zhuangjb.util.MD5;
@@ -28,15 +29,22 @@ public class InstagramUserAction extends AbstractAction {
 	public View userIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// 登陆校验
 		BasicDBObject qryfilter2 = new BasicDBObject();
+		String content = request.getParameter("content");
+		if ("get".equalsIgnoreCase(request.getMethod())||"".equals(content)||content==null) {
+			List<Document> list = MongoDAO.getInstance().find("user_popular",
+					qryfilter2);
+			request.setAttribute("userList", list);
 
-		List<Document> list = MongoDAO.getInstance().find("user_popular",
-				qryfilter2);
+			return new JspView("/WEB-INF/jsp/userIndex.jsp");
 
-		request.setAttribute("userList",list);
+		}else{
 
-		return new JspView("/WEB-INF/jsp/userIndex.jsp");
+			  Object[] list=new InstagramUtils().search(content);
+			 request.setAttribute("list", list);
 
+			return new JspView("/WEB-INF/jsp/searchList.jsp");
 
+		}
 	}
 
 	@At("/postDetail")
