@@ -1,4 +1,5 @@
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="UTF-8">
@@ -21,7 +22,7 @@
 
 
 
-<link rel="stylesheet" href="../css/pick.css">
+<link rel="stylesheet" href="../css/search.css">
 <script src="../js/shequjingxuan.js"></script>
 <%@include file="_header.jsp" %>
 
@@ -34,40 +35,27 @@
         <li></li>
         <li class="show">
             <%
-                Object [] results= (Object[]) request.getAttribute("list");
-                for(int i=0;i<=results.length/4;i++){
+                ArrayList results= (ArrayList) request.getAttribute("list");
+                for(int i=0;i<=results.size()/4;i++){
             %>
             <div class="td2 fl">
                 <%
                     int start=4*i;
                     int end=4;
-                    if(i==results.length/4){
-                        end=results.length%4;
+                    if(i==results.size()/4){
+                        end=results.size()%4;
                     }
 
                     for(int k=0;k<end;k++){
-                        Map map= (Map) results[k+start];
-                        if(map.get("username")!=null)
-                        {
+                        Map map= (Map) results.get(k+start);
+                        if(map==null){
+                            continue;
+                        }
+                        if(map.get("username")==null){
                 %>
-
                 <div class="td2-<%=k+1%>">
-                    <a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(map.get("username"))%>" >
+                    <a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(map.get("name"))%>" >
 
-                        <img src="<%=getString(map.get("profile_pic_url"))%>" class="lazy">
-
-                        <div class="di2-<%=k+1%>">
-                            <img src="<%=getString(map.get("profile_pic_url"))%>" class="lazy">
-                            <p>#<%=getString(map.get("username"))%></p>
-                        </div>
-                    </a>
-
-                </div>
-                <% }else{ %>
-                <div class="td2-<%=k+1%>">
-                    <a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(map.get("username"))%>" >
-
-                        <img src="../image/tag.png" class="lazy">
 
                         <div class="di2-<%=k+1%>">
                             <img src="../image/tag.png" class="lazy">
@@ -76,6 +64,20 @@
                     </a>
 
                 </div>
+
+                <% }else{ %>
+                <div class="td2-<%=k+1%>">
+                    <a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(map.get("username"))%>" >
+
+
+                        <div class="di2-<%=k+1%>">
+                            <img src="<%=getString(map.get("profile_pic_url"))%>" class="lazy">
+                            <p><%=getString(map.get("username"))%></p>
+                        </div>
+                    </a>
+
+                </div>
+
                 <% }
                     }%>
             </div>

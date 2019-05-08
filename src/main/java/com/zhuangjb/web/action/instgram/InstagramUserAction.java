@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class InstagramUserAction extends AbstractAction {
 
@@ -40,8 +41,33 @@ public class InstagramUserAction extends AbstractAction {
 		}else{
 
 			  Object[] list=new InstagramUtils().search(content);
-			 request.setAttribute("list", list);
 
+			ArrayList result=new ArrayList();
+			for(Object obj:list){
+				if (obj==null){
+					continue;
+				}
+				result.add(obj);
+			}
+
+			 request.setAttribute("list", result);
+
+//			Object [] results= (Object[]) request.getAttribute("list");
+//			for(int i=0;i<=results.length/4;i++){
+//
+//				int start=4*i;
+//				int end=4;
+//				if(i==results.length/4){
+//					end=results.length%4;
+//				}
+//
+//				for(int k=0;k<end;k++) {
+//					Map map = (Map) results[k + start];
+//					if (map.get("username") == null) {
+//
+//					}
+//				}
+//			}
 			return new JspView("/WEB-INF/jsp/searchList.jsp");
 
 		}
