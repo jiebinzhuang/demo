@@ -94,11 +94,14 @@ public class InstagramUtils {
     }
 
 
-    public static void getTagPost(String tagname,int mount){
+    public static List<Document> getTagPost(String tagname,int mount){
+        List<Document> result=new ArrayList<Document>();
         try {
             String tablename="posts_"+tagname;
             String json= HttpUtils.httpGet(URL_ADDR+"instagram/getTagList?tagname="+tagname+"&amount="+mount);
             List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
+
+
             for(Map<String,Object> map:resultMapList){
 
                 BasicDBObject qryfilter2 = new BasicDBObject();
@@ -114,7 +117,11 @@ public class InstagramUtils {
                     System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
                     userdoc.put(entry.getKey(), entry.getValue());
                 }
+
                 userdoc.put("ts", DateUtils.getTS());
+
+                result.add(userdoc);
+
                 if (isExist){
                     MongoDAO.getInstance().findOneAndUpdate(
                             tablename, qryfilter2,
@@ -127,6 +134,7 @@ public class InstagramUtils {
         } catch (Exception e1) {
             e1.printStackTrace();
         }
+        return result;
     }
 
 

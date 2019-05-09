@@ -29,7 +29,7 @@
 <body>
 <div class="box" id="box">
     <div class="tab" id="tab">
-        <span class="current" style="width: 100px">Search Result</span>
+        <span class="current" style="width: 1120px"><h2>Search Result</h2></span>
     </div>
     <div class="bd">
         <li></li>
@@ -54,7 +54,7 @@
                         if(map.get("username")==null){
                 %>
                 <div class="td2-<%=k+1%>">
-                    <a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(map.get("name"))%>" >
+                    <a href="tagIndex.action?type=tag&tag=<%=getString(request.getParameter("content"))%>" >
 
 
                         <div class="di2-<%=k+1%>">
@@ -67,7 +67,7 @@
 
                 <% }else{ %>
                 <div class="td2-<%=k+1%>">
-                    <a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(map.get("username"))%>" >
+                    <a href="tagIndex.action?type=user%>&user=<%=getString(map.get("username"))%>" >
 
 
                         <div class="di2-<%=k+1%>">

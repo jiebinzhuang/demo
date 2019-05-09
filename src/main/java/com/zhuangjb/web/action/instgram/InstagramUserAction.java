@@ -26,51 +26,85 @@ import java.util.Map;
 public class InstagramUserAction extends AbstractAction {
 
 
-	@At("/userIndex")
-	public View userIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@At("/searchIndex")
+	public View searchIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// 登陆校验
 		BasicDBObject qryfilter2 = new BasicDBObject();
 		String content = request.getParameter("content");
 		if ("get".equalsIgnoreCase(request.getMethod())||"".equals(content)||content==null) {
 			List<Document> list = MongoDAO.getInstance().find("user_popular",
 					qryfilter2);
-			request.setAttribute("userList", list);
+			request.setAttribute("list", list);
 
-			return new JspView("/WEB-INF/jsp/userIndex.jsp");
+			return new JspView("/WEB-INF/jsp/searchIndex.jsp");
 
 		}else{
 
-			  Object[] list=new InstagramUtils().search(content);
+			Object[] list=new InstagramUtils().search(content);
 
 			ArrayList result=new ArrayList();
+			if(list!=null){
 			for(Object obj:list){
 				if (obj==null){
 					continue;
 				}
 				result.add(obj);
-			}
+			}}
 
 			 request.setAttribute("list", result);
 
-//			Object [] results= (Object[]) request.getAttribute("list");
-//			for(int i=0;i<=results.length/4;i++){
-//
-//				int start=4*i;
-//				int end=4;
-//				if(i==results.length/4){
-//					end=results.length%4;
-//				}
-//
-//				for(int k=0;k<end;k++) {
-//					Map map = (Map) results[k + start];
-//					if (map.get("username") == null) {
-//
-//					}
-//				}
-//			}
 			return new JspView("/WEB-INF/jsp/searchList.jsp");
 
 		}
+	}
+
+	@At("/search")
+	public View search(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// 登陆校验
+
+		String content = request.getParameter("content");
+		if (!"".equals(content)&&content!=null) {
+			Object[] list=new InstagramUtils().search(content);
+			ArrayList result=new ArrayList();
+			if(list!=null){
+				for(Object obj:list){
+					if (obj==null){
+						continue;
+					}
+					result.add(obj);
+				}}
+
+			request.setAttribute("list", result);
+
+		}
+		return new JspView("/WEB-INF/jsp/searchList.jsp");
+	}
+	@At("/tagIndex")
+	public View tagIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		BasicDBObject qryfilter2 = new BasicDBObject();
+		String tag = request.getParameter("tag");
+
+		List<Document> list= InstagramUtils.getTagPost(tag,12);
+		ContextHolder.getRequest().setAttribute("list", list);
+		return new JspView("/WEB-INF/jsp/tagIndex.jsp");
+	}
+
+
+
+	@At("/userIndex")
+	public View userIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// 登陆校验
+		BasicDBObject qryfilter2 = new BasicDBObject();
+		String content = request.getParameter("content");
+
+			List<Document> list = MongoDAO.getInstance().find("user_popular",
+					qryfilter2);
+			request.setAttribute("list", list);
+
+			return new JspView("/WEB-INF/jsp/userIndex.jsp");
+
+
 	}
 
 	@At("/postDetail")
