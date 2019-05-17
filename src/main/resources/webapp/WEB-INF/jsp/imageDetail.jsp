@@ -26,31 +26,6 @@
 %>
 <div class="card-note" id="card-note">
     <div>
-        <div class="bottom-info">
-            <a href="" class="author-info">
-                <div class="left">
-                    <div class="left-img">
-                        <img src="../image/user/<%=doc.get("username")%>.jpg" style="width: 30px;height: 30px;"  alt="">
-                    </div>
-                </div>
-                <div class="right" style="width: 200px">
-                    <h6 class="name-bottom" style="font-size: 14px;line-height: 25px"><%=doc.get("username")%></h6>
-
-                </div>
-            </a>
-            <div class="share-item">
-                <p class="title">Share it with friends：</p>
-                <div class="all-icon">
-                    <a href="" class="wx"></a>
-                    <a href="" class="wb"></a>
-                    <a href="" class="qq"></a>
-                </div>
-            </div>
-            <div class="codeshow" style="display: none">
-                <img src="../images/wxewm.png" alt="">
-                <p>分享至微信</p>
-            </div>
-        </div>
         <div id="wrapper">
             <div id="content">
                 <!--大图预览区-->
@@ -73,26 +48,26 @@
             </div>
 
         </div>
-        <div class="tags">
-            <div class="left-tag">
-                <span class="title">Posted on </span>
-                <span class="time"><%=doc.get("date")%></span>
-            </div>
-            <div class="right-tag">
-                <span class="like">
-                    <i></i>
-                    <span>353</span>
-                </span>
-                <span class="comment">
-                    <i></i>
-                    <span>200</span>
-                </span>
-                <span class="star">
-                    <i></i>
-                    <span>293</span>
-                </span>
-            </div>
-        </div>
+        <%--<div class="tags">--%>
+            <%--<div class="left-tag">--%>
+                <%--<span class="title">Posted on </span>--%>
+                <%--<span class="time"><%=doc.get("date")%></span>--%>
+            <%--</div>--%>
+            <%--<div class="right-tag">--%>
+                <%--<span class="like">--%>
+                    <%--<i></i>--%>
+                    <%--<span>353</span>--%>
+                <%--</span>--%>
+                <%--<span class="comment">--%>
+                    <%--<i></i>--%>
+                    <%--<span>200</span>--%>
+                <%--</span>--%>
+                <%--<span class="star">--%>
+                    <%--<i></i>--%>
+                    <%--<span>293</span>--%>
+                <%--</span>--%>
+            <%--</div>--%>
+        <%--</div>--%>
         <%--<div class="alltip">--%>
             <%--<h3 class="top">--%>
                 <%--<i class="remain"></i>--%>

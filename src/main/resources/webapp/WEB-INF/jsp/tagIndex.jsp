@@ -48,17 +48,17 @@
                 %>
 
                 <div class="td2-<%=k+1%>">
-                    <a href="postDetail.action?_id=<%=getString(doc.get("_id"))%>" >
-                        <% if(!"".equals(getString(doc.get("video_url")))){%>
+                    <a href="getPostByUrl.action?href=<%=getString(doc.get("href"))%>" >
+                        <% if("true".equals(getString(doc.get("video")))){%>
                         <i class="fr fa fa-video-camera fa-5x fa-inverse" aria-hidden="true"></i>
                         <% }%>
                         <img src="<%=getString(doc.get("preview_img"))%>" class="lazy">
 
-                        <%--<p>讲真，如果你不看到最后，你知道这个是什么吗？</p>--%>
-                        <div class="di2-<%=k+1%>">
-                            <img src="../image/user/<%=getString(doc.get("username"))%>.jpg" class="lazy">
-                            <p><%=getString(doc.get("username"))%></p>
-                        </div>
+                        <%--&lt;%&ndash;<p>讲真，如果你不看到最后，你知道这个是什么吗？</p>&ndash;%&gt;--%>
+                        <%--<div class="di2-<%=k+1%>">--%>
+                            <%--<img src="../image/user/<%=getString(doc.get("username"))%>.jpg" class="lazy">--%>
+                            <%--<p><%=getString(doc.get("username"))%></p>--%>
+                        <%--</div>--%>
                     </a>
                 </div>
                  <% }%>

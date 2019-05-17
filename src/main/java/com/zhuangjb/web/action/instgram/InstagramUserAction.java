@@ -51,12 +51,47 @@ public class InstagramUserAction extends AbstractAction {
 				result.add(obj);
 			}}
 
-			 request.setAttribute("list", result);
+			request.setAttribute("list", result);
 
 			return new JspView("/WEB-INF/jsp/searchList.jsp");
 
 		}
 	}
+
+	@At("/download")
+	public View download(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		if ("get".equalsIgnoreCase(request.getMethod())){
+			return new JspView("/WEB-INF/jsp/download.jsp");
+		}
+
+		String href = request.getParameter("href");
+		if(!href.contains("instagram.com/p/")){
+//			throw new Exception("Input Url invaild");
+			return new JspView("/WEB-INF/jsp/download.jsp");
+		}
+
+		Document doc= new InstagramUtils().getPostByUrl(href);
+
+		if (doc == null) {
+			throw new Exception("Data is Null");
+		}
+		request.setAttribute("postdoc", doc );
+		if (doc.get("imgs") != null) {
+			ArrayList xx = (ArrayList) doc.get("imgs");
+			if (xx != null && xx.size() > 0) {
+				return new JspView("/WEB-INF/jsp/imageDetail.jsp");
+
+			}
+		}
+
+		if (doc.get("video_url") != null) {
+			return new JspView("/WEB-INF/jsp/postDetail.jsp");
+		}else{
+			throw new Exception("Server Error");
+		}
+	}
+
 
 	@At("/search")
 	public View search(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -82,10 +117,19 @@ public class InstagramUserAction extends AbstractAction {
 	@At("/tagIndex")
 	public View tagIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		BasicDBObject qryfilter2 = new BasicDBObject();
 		String tag = request.getParameter("tag");
 
-		List<Document> list= InstagramUtils.getTagPost(tag,12);
+		List<Document> list= new InstagramUtils().getPostPreList(tag,12);
+		ContextHolder.getRequest().setAttribute("list", list);
+		return new JspView("/WEB-INF/jsp/tagIndex.jsp");
+	}
+
+	@At("/userPostIndex")
+	public View userPostIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String username = request.getParameter("username");
+
+		List<Document> list= new InstagramUtils().getUserPostIndex(username,12);
 		ContextHolder.getRequest().setAttribute("list", list);
 		return new JspView("/WEB-INF/jsp/tagIndex.jsp");
 	}
@@ -104,6 +148,32 @@ public class InstagramUserAction extends AbstractAction {
 
 			return new JspView("/WEB-INF/jsp/userIndex.jsp");
 
+
+	}
+	@At("/getPostByUrl")
+	public View getPostByUrl(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+		String href = request.getParameter("href");
+		 Document doc= new InstagramUtils().getPostByUrl(href);
+
+		if (doc == null) {
+			throw new Exception("Data is Null");
+		}
+		request.setAttribute("postdoc", doc );
+		if (doc.get("imgs") != null) {
+			ArrayList xx = (ArrayList) doc.get("imgs");
+			if (xx != null && xx.size() > 0) {
+				return new JspView("/WEB-INF/jsp/imageDetail.jsp");
+
+			}
+		}
+
+		if (doc.get("video_url") != null) {
+			return new JspView("/WEB-INF/jsp/postDetail.jsp");
+		}else{
+			throw new Exception("Server Error");
+		}
 
 	}
 

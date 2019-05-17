@@ -54,7 +54,7 @@
                         if(map.get("username")==null){
                 %>
                 <div class="td2-<%=k+1%>">
-                    <a href="tagIndex.action?type=tag&tag=<%=getString(request.getParameter("content"))%>" >
+                    <a href="tagIndex.action?type=tag&tag=<%=getString(map.get("name"))%>" >
 
 
                         <div class="di2-<%=k+1%>">
@@ -67,7 +67,7 @@
 
                 <% }else{ %>
                 <div class="td2-<%=k+1%>">
-                    <a href="tagIndex.action?type=user%>&user=<%=getString(map.get("username"))%>" >
+                    <a href="userPostIndex.action?username=<%=getString(map.get("username"))%>" >
 
 
                         <div class="di2-<%=k+1%>">

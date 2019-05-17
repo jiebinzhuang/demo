@@ -24,6 +24,8 @@ public class GetTagTask implements Runnable {
 		while (!BusyServer.getInstance().isStopThreadSignal()) {
 			log.info("processor start:" + this.getClass().toString());
 
+
+
 			InstagramUtils.getTagPost("fashion",24);
 
 			InstagramUtils.getTagPost("beauty",24);

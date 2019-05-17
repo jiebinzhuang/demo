@@ -17,12 +17,6 @@
 
 <%@include file="_header.jsp" %>
 <body>
-<%
-
-	java.util.List<org.bson.Document> list=(java.util.List<org.bson.Document>)request.getAttribute("list");
-
-
-%>
 <div class="business-page pc-container">
 	<div class="container">
 			<div class="inner-brief">
@@ -57,15 +51,15 @@
 <div class="backtop" style="display:none;">
 
 </div>
-<!--二维码的制作-->
-<div class="ewm">
-	<div class="smallewm"></div>
-	<div class="bigewm" style="display:none;">
-		<img src="../images/936da4bf-1faa-4e6a-af2d-9b853c3e6e55.png" alt="" class="ewmimg">
-		<p class="title">扫我下载APP</p>
-	</div>
-</div>
-</body>
+<%--<!--二维码的制作-->--%>
+<%--<div class="ewm">--%>
+	<%--<div class="smallewm"></div>--%>
+	<%--<div class="bigewm" style="display:none;">--%>
+		<%--<img src="../images/936da4bf-1faa-4e6a-af2d-9b853c3e6e55.png" alt="" class="ewmimg">--%>
+		<%--<p class="title">扫我下载APP</p>--%>
+	<%--</div>--%>
+<%--</div>--%>
+<%--</body>--%>
 <!--tab转换-->
 <script>
 

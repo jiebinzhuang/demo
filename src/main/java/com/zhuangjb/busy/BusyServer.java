@@ -57,16 +57,16 @@ public class BusyServer {
 			this.setStopThreadSignal(false);
 
 
-//			GetPopularUserTask getdatatask = new GetPopularUserTask();
-//			Thread getdatathread = new Thread(getdatatask);
-//			getdatathread.setName("GetPopularUserTask");
-//			threadPool.add(getdatathread);
+			GetPopularUserTask getdatatask = new GetPopularUserTask();
+			Thread getdatathread = new Thread(getdatatask);
+			getdatathread.setName("GetPopularUserTask");
+			threadPool.add(getdatathread);
 
 
-			GetTagTask tagask = new GetTagTask();
-			Thread tagaskthread = new Thread(tagask);
-			tagaskthread.setName("GetTagTask");
-			threadPool.add(tagaskthread);
+//			GetTagTask tagask = new GetTagTask();
+//			Thread tagaskthread = new Thread(tagask);
+//			tagaskthread.setName("GetTagTask");
+//			threadPool.add(tagaskthread);
 
 			this.setRunning(true);
 

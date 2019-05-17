@@ -102,6 +102,10 @@ public class InstagramUtils {
             List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
 
 
+            BasicDBObject qryfilter = new BasicDBObject();
+            MongoDAO.getInstance().deleteMany(tablename,
+                    qryfilter);
+
             for(Map<String,Object> map:resultMapList){
 
                 BasicDBObject qryfilter2 = new BasicDBObject();
@@ -177,47 +181,85 @@ public class InstagramUtils {
         return null;
     }
 
+
+
+    public  List<Document> getUserPostIndex(String username,int mount){
+        List<Document> result=new ArrayList<Document>();
+        try {
+
+            String json= HttpUtils.httpGet(URL_ADDR+"instagram/getUserPostIndex?username="+username+"&amount="+mount);
+            List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
+
+
+            for(Map<String,Object> map:resultMapList){
+
+
+                Document userdoc=new Document();
+
+                for (Map.Entry<String, Object> entry : map.entrySet()) {
+                    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+                    userdoc.put(entry.getKey(), entry.getValue());
+                }
+
+
+                result.add(userdoc);
+
+            }
+
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return result;
+    }
+
+
+    public  List<Document> getPostPreList(String tagname,int mount){
+        List<Document> result=new ArrayList<Document>();
+        try {
+
+            String json= HttpUtils.httpGet(URL_ADDR+"instagram/getPostPreList?tagname="+tagname+"&amount="+mount);
+            List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
+
+
+            for(Map<String,Object> map:resultMapList){
+
+
+                Document userdoc=new Document();
+
+                for (Map.Entry<String, Object> entry : map.entrySet()) {
+                    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+                    userdoc.put(entry.getKey(), entry.getValue());
+                }
+
+
+                result.add(userdoc);
+
+            }
+
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return result;
+    }
+
 //
-//    public static void updateVideoUrl(String url){
-//        try {
-//            BasicDBObject qryfilter2 = new BasicDBObject();
-//            qryfilter2.put("ts", new BasicDBObject("$gt", DateUtils.getCurrentDate()));
-//            Document userdoc = MongoDAO.getInstance().find(
-//                    "posts_info", qryfilter2);
-//
-//
-//            String json= HttpUtils.httpGet(URL_ADDR+"instagram/getPostByUrl?username="+url);
-//
-//
-//            List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
-//            for(Map<String,Object> map:resultMapList){
-//
-//                BasicDBObject qryfilter2 = new BasicDBObject();
-//                qryfilter2.put("url", map.get("url"));
-//                Document userdoc = MongoDAO.getInstance().findOne(
-//                        "posts_info", qryfilter2);
-//                boolean isExist=true;
-//                if (userdoc == null) {
-//                    userdoc=new Document();
-//                    isExist=false;
-//                }
-//                for (Map.Entry<String, Object> entry : map.entrySet()) {
-//                    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
-//                    userdoc.put(entry.getKey(), entry.getValue());
-//                }
-//                userdoc.put("username",username);
-//                userdoc.put("ts", DateUtils.getTS());
-//                if (isExist){
-//                    MongoDAO.getInstance().findOneAndUpdate(
-//                            "posts_info", qryfilter2,
-//                            new BasicDBObject("$set", userdoc));
-//                }else{
-//                    MongoDAO.getInstance().insert("posts_info",userdoc);
-//                }
-//            }
-//
-//        } catch (Exception e1) {
-//            e1.printStackTrace();
-//        }
-//    }
+    public Document getPostByUrl(String url){
+
+        Document userdoc  = new Document();
+        try {
+            String json= HttpUtils.httpGet(URL_ADDR+"instagram/getPostByUrl?url="+url);
+            List<Map> resultMapList= JsonUtil.jsonArrayToMapList(json);
+            for(Map<String,Object> map:resultMapList) {
+
+                for (Map.Entry<String, Object> entry : map.entrySet()) {
+                    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+                    userdoc.put(entry.getKey(), entry.getValue());
+                }
+            }
+
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return userdoc;
+    }
 }

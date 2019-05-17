@@ -50,7 +50,7 @@
 
 
 				<div class="td2-<%=k+1%>">
-					<a href="postDetail.action?type=<%=request.getParameter("type")%>&_id=<%=getString(doc.get("username"))%>" >
+					<a href="userPostIndex.action?username=<%=getString(doc.get("username"))%>" >
 						<div class="di2-<%=k+1%>">
 							<img src="../image/user/<%=getString(doc.get("username"))%>.jpg" class="lazy">
 							<p><%=getString(doc.get("username"))%></p>
